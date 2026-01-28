@@ -51,9 +51,9 @@ export const DubaiPage: React.FC = () => {
           
           {/* IMAGE CONTAINER */}
           <div className="mt-auto h-64 bg-slate-50 rounded-xl overflow-hidden relative group border-2 border-dashed border-slate-300 flex flex-col items-center justify-center p-4 text-center">
-             {/* Image updated to point to public/assets folder (relative path) */}
+             {/* Image updated to point to public/assets folder (absolute path) */}
              <img 
-               src="assets/dubai-map.jpg" 
+               src="/assets/dubai-map.jpg" 
                onError={(e) => e.currentTarget.style.display = 'none'}
                alt="Carte géopolitique du Moyen-Orient mettant en évidence la position stratégique de Dubaï sur la côte sud-est du Golfe Persique" 
                className="absolute inset-0 w-full h-full object-cover z-10"
@@ -136,13 +136,13 @@ export const DubaiPage: React.FC = () => {
           {/* IMAGE CONTAINER */}
           <div className="mt-4 h-24 w-full bg-white/5 rounded-lg overflow-hidden relative border border-white/10 flex items-center justify-center">
              <img 
-               src="assets/dubai-logistics.jpg" 
+               src="/assets/dubai-logistics.jpg" 
                onError={(e) => e.currentTarget.style.display = 'none'}
                alt="Vue aérienne du port Jebel Ali" 
                className="absolute inset-0 w-full h-full object-cover z-10" 
              />
              <div className="text-[10px] text-slate-400 text-center px-1 z-0">
-               IMAGE MANQUANTE<br/>assets/dubai-logistics.jpg
+               IMAGE MANQUANTE<br/>/assets/dubai-logistics.jpg
              </div>
           </div>
         </div>
@@ -171,14 +171,14 @@ export const DubaiPage: React.FC = () => {
               {/* IMAGE CONTAINER: POLITIQUE */}
               <div className="h-40 bg-slate-50 rounded-xl relative overflow-hidden border-2 border-dashed border-slate-300 flex items-center justify-center">
                  <img 
-                   src="assets/dubai-politics.jpg" 
+                   src="/assets/dubai-politics.jpg" 
                    onError={(e) => e.currentTarget.style.display = 'none'}
                    alt="Portrait de Cheikh Mohammed bin Rashid Al Maktoum" 
                    className="absolute inset-0 w-full h-full object-cover z-10" 
                  />
                  <div className="text-center p-2 z-0">
                     <Crown className="text-slate-300 w-6 h-6 mx-auto mb-1" />
-                    <span className="text-[10px] text-slate-400 block">assets/dubai-politics.jpg</span>
+                    <span className="text-[10px] text-slate-400 block">/assets/dubai-politics.jpg</span>
                  </div>
               </div>
            </div>
