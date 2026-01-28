@@ -47,7 +47,7 @@ export const ZurichPage: React.FC = () => {
           </div>
           <div className="mt-auto h-64 bg-slate-50 rounded-xl overflow-hidden relative border border-slate-100">
              <ImageWithFallback 
-               src="assets/zurich-aerial.jpg" 
+               src="/assets/zurich-aerial.jpg" 
                alt="Vue aérienne de Zurich" 
                className="absolute inset-0 w-full h-full object-cover"
              />
@@ -120,7 +120,7 @@ export const ZurichPage: React.FC = () => {
           </div>
           <div className="mt-4 h-20 w-full bg-white/10 rounded-lg overflow-hidden relative border border-white/10">
              <ImageWithFallback 
-               src="assets/zurich-lake.jpg" 
+               src="/assets/zurich-lake.jpg" 
                alt="Parc urbain ou bord du lac" 
                className="absolute inset-0 w-full h-full object-cover opacity-80"
              />
@@ -149,7 +149,7 @@ export const ZurichPage: React.FC = () => {
               </div>
               <div className="h-40 bg-slate-50 rounded-xl relative overflow-hidden border border-slate-100">
                  <ImageWithFallback 
-                   src="assets/zurich-politics.jpg" 
+                   src="/assets/zurich-politics.jpg" 
                    alt="Hôtel de ville de Zurich" 
                    className="absolute inset-0 w-full h-full object-cover"
                  />

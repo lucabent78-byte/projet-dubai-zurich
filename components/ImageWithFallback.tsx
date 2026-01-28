@@ -10,6 +10,9 @@ interface ImageWithFallbackProps {
 export const ImageWithFallback: React.FC<ImageWithFallbackProps> = ({ src, alt, className }) => {
   const [error, setError] = useState(false);
 
+  // Helper to display clean path in debug info
+  const displayPath = src.startsWith('/') ? src.substring(1) : src;
+
   if (error) {
     return (
       <div className={`relative overflow-hidden flex flex-col items-center justify-center bg-slate-50 text-slate-500 p-4 border-2 border-dashed border-red-200 ${className}`}>
@@ -24,7 +27,7 @@ export const ImageWithFallback: React.FC<ImageWithFallbackProps> = ({ src, alt, 
               <FolderOpen size={10} /> Emplacement requis :
             </p>
             <code className="block text-xs font-mono text-slate-700 break-all bg-slate-100 p-1 rounded">
-              public/{src}
+              public/{displayPath}
             </code>
           </div>
 

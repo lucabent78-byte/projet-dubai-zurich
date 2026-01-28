@@ -47,7 +47,7 @@ export const DubaiPage: React.FC = () => {
           </div>
           <div className="mt-auto h-64 bg-slate-50 rounded-xl overflow-hidden relative border border-slate-100">
              <ImageWithFallback 
-               src="assets/dubai-map.jpg" 
+               src="/assets/dubai-map.jpg" 
                alt="Carte géopolitique du Moyen-Orient" 
                className="absolute inset-0 w-full h-full object-cover"
              />
@@ -122,7 +122,7 @@ export const DubaiPage: React.FC = () => {
           </div>
           <div className="mt-4 h-24 w-full bg-white/5 rounded-lg overflow-hidden relative border border-white/10">
              <ImageWithFallback 
-               src="assets/dubai-logistics.jpg" 
+               src="/assets/dubai-logistics.jpg" 
                alt="Vue aérienne du port Jebel Ali" 
                className="absolute inset-0 w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity"
              />
@@ -151,7 +151,7 @@ export const DubaiPage: React.FC = () => {
               </div>
               <div className="h-40 bg-slate-50 rounded-xl relative overflow-hidden border border-slate-100">
                  <ImageWithFallback 
-                   src="assets/dubai-politics.jpg" 
+                   src="/assets/dubai-politics.jpg" 
                    alt="Portrait de Cheikh Mohammed" 
                    className="absolute inset-0 w-full h-full object-cover"
                  />

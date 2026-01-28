@@ -27,7 +27,7 @@ export const AnalysisPage: React.FC = () => {
            <div className="bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden flex flex-col">
               <div className="h-48 bg-slate-100 relative border-b border-slate-100">
                  <ImageWithFallback 
-                    src="assets/dubai-skyline.jpg" 
+                    src="/assets/dubai-skyline.jpg" 
                     alt="Skyline Dubaï" 
                     className="absolute inset-0 w-full h-full object-cover"
                  />
@@ -43,7 +43,7 @@ export const AnalysisPage: React.FC = () => {
            <div className="bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden flex flex-col">
               <div className="h-48 bg-slate-100 relative border-b border-slate-100">
                  <ImageWithFallback 
-                    src="assets/zurich-roofs.jpg" 
+                    src="/assets/zurich-roofs.jpg" 
                     alt="Vue toits Zurich" 
                     className="absolute inset-0 w-full h-full object-cover"
                  />
@@ -69,7 +69,7 @@ export const AnalysisPage: React.FC = () => {
            <div className="bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden flex flex-col">
               <div className="h-48 bg-slate-100 relative border-b border-slate-100">
                  <ImageWithFallback 
-                    src="assets/dubai-construction.jpg" 
+                    src="/assets/dubai-construction.jpg" 
                     alt="Construction Dubaï" 
                     className="absolute inset-0 w-full h-full object-cover"
                  />
@@ -87,7 +87,7 @@ export const AnalysisPage: React.FC = () => {
            <div className="bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden flex flex-col">
               <div className="h-48 bg-slate-100 relative border-b border-slate-100">
                  <ImageWithFallback 
-                    src="assets/zurich-street.jpg" 
+                    src="/assets/zurich-street.jpg" 
                     alt="Rue calme Zurich" 
                     className="absolute inset-0 w-full h-full object-cover"
                  />
@@ -116,14 +116,14 @@ export const AnalysisPage: React.FC = () => {
               <div className="grid grid-cols-2 h-48 border-b border-slate-100">
                   <div className="bg-slate-50 relative border-r border-slate-100">
                      <ImageWithFallback 
-                        src="assets/dubai-luxury.jpg" 
+                        src="/assets/dubai-luxury.jpg" 
                         alt="Luxe Dubaï" 
                         className="absolute inset-0 w-full h-full object-cover" 
                      />
                   </div>
                   <div className="bg-slate-100 relative">
                      <ImageWithFallback 
-                        src="assets/dubai-labor.jpg" 
+                        src="/assets/dubai-labor.jpg" 
                         alt="Travail Dubaï" 
                         className="absolute inset-0 w-full h-full object-cover" 
                      />
@@ -140,7 +140,7 @@ export const AnalysisPage: React.FC = () => {
            <div className="bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden flex flex-col">
               <div className="h-48 bg-slate-100 relative border-b border-slate-100">
                  <ImageWithFallback 
-                    src="assets/zurich-housing.jpg" 
+                    src="/assets/zurich-housing.jpg" 
                     alt="Logement Zurich" 
                     className="absolute inset-0 w-full h-full object-cover" 
                  />
