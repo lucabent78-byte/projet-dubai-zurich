@@ -1,5 +1,6 @@
 import React from 'react';
-import { ArrowUpFromLine, Hammer, Users, Image as ImageIcon, CheckCircle2, AlertTriangle } from 'lucide-react';
+import { ArrowUpFromLine, Hammer, Users, CheckCircle2, AlertTriangle } from 'lucide-react';
+import { ImageWithFallback } from './ImageWithFallback';
 
 export const AnalysisPage: React.FC = () => {
   return (
@@ -24,24 +25,12 @@ export const AnalysisPage: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
            {/* DUBAI */}
            <div className="bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden flex flex-col">
-              <div className="h-48 bg-slate-100 relative border-b border-slate-100 flex items-center justify-center">
-                 <img 
-                    src="/assets/dubai-skyline.jpg" 
-                    onError={(e) => {
-                      e.currentTarget.style.opacity = '0';
-                    }}
-                    onLoad={(e) => {
-                      e.currentTarget.style.opacity = '1';
-                      const sibling = e.currentTarget.nextElementSibling as HTMLElement;
-                      if(sibling) sibling.style.display = 'none';
-                    }}
+              <div className="h-48 bg-slate-100 relative border-b border-slate-100">
+                 <ImageWithFallback 
+                    src="assets/dubai-skyline.jpg" 
                     alt="Skyline Dubaï" 
-                    className="absolute inset-0 w-full h-full object-cover z-10 transition-opacity duration-300"
+                    className="absolute inset-0 w-full h-full object-cover"
                  />
-                 <div className="text-center z-0 flex flex-col items-center justify-center absolute inset-0">
-                    <ImageIcon className="w-8 h-8 text-slate-300 mx-auto mb-2" />
-                    <span className="text-xs font-mono text-slate-400 bg-white px-2 py-1 rounded">/assets/dubai-skyline.jpg</span>
-                 </div>
               </div>
               <div className="p-6 flex-1">
                  <h3 className="font-bold text-lg mb-2 text-blue-600">Dubaï : La course au ciel</h3>
@@ -52,24 +41,12 @@ export const AnalysisPage: React.FC = () => {
            </div>
            {/* ZURICH */}
            <div className="bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden flex flex-col">
-              <div className="h-48 bg-slate-100 relative border-b border-slate-100 flex items-center justify-center">
-                 <img 
-                    src="/assets/zurich-roofs.jpg" 
-                    onError={(e) => {
-                      e.currentTarget.style.opacity = '0';
-                    }}
-                    onLoad={(e) => {
-                      e.currentTarget.style.opacity = '1';
-                      const sibling = e.currentTarget.nextElementSibling as HTMLElement;
-                      if(sibling) sibling.style.display = 'none';
-                    }}
+              <div className="h-48 bg-slate-100 relative border-b border-slate-100">
+                 <ImageWithFallback 
+                    src="assets/zurich-roofs.jpg" 
                     alt="Vue toits Zurich" 
-                    className="absolute inset-0 w-full h-full object-cover z-10 transition-opacity duration-300"
+                    className="absolute inset-0 w-full h-full object-cover"
                  />
-                 <div className="text-center z-0 flex flex-col items-center justify-center absolute inset-0">
-                    <ImageIcon className="w-8 h-8 text-slate-300 mx-auto mb-2" />
-                    <span className="text-xs font-mono text-slate-400 bg-white px-2 py-1 rounded">/assets/zurich-roofs.jpg</span>
-                 </div>
               </div>
               <div className="p-6 flex-1">
                  <h3 className="font-bold text-lg mb-2 text-red-600">Zurich : L'échelle humaine</h3>
@@ -90,24 +67,12 @@ export const AnalysisPage: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
            {/* DUBAI */}
            <div className="bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden flex flex-col">
-              <div className="h-48 bg-slate-100 relative border-b border-slate-100 flex items-center justify-center">
-                 <img 
-                    src="/assets/dubai-construction.jpg" 
-                    onError={(e) => {
-                      e.currentTarget.style.opacity = '0';
-                    }}
-                    onLoad={(e) => {
-                      e.currentTarget.style.opacity = '1';
-                      const sibling = e.currentTarget.nextElementSibling as HTMLElement;
-                      if(sibling) sibling.style.display = 'none';
-                    }}
+              <div className="h-48 bg-slate-100 relative border-b border-slate-100">
+                 <ImageWithFallback 
+                    src="assets/dubai-construction.jpg" 
                     alt="Construction Dubaï" 
-                    className="absolute inset-0 w-full h-full object-cover z-10 transition-opacity duration-300"
+                    className="absolute inset-0 w-full h-full object-cover"
                  />
-                 <div className="text-center z-0 flex flex-col items-center justify-center absolute inset-0">
-                    <ImageIcon className="w-8 h-8 text-slate-300 mx-auto mb-2" />
-                    <span className="text-xs font-mono text-slate-400 bg-white px-2 py-1 rounded">/assets/dubai-construction.jpg</span>
-                 </div>
               </div>
               <div className="p-6 flex-1">
                  <div className="flex items-center gap-2 mb-2 text-orange-600 font-medium text-sm">
@@ -120,24 +85,12 @@ export const AnalysisPage: React.FC = () => {
            </div>
            {/* ZURICH */}
            <div className="bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden flex flex-col">
-              <div className="h-48 bg-slate-100 relative border-b border-slate-100 flex items-center justify-center">
-                 <img 
-                    src="/assets/zurich-street.jpg" 
-                    onError={(e) => {
-                      e.currentTarget.style.opacity = '0';
-                    }}
-                    onLoad={(e) => {
-                      e.currentTarget.style.opacity = '1';
-                      const sibling = e.currentTarget.nextElementSibling as HTMLElement;
-                      if(sibling) sibling.style.display = 'none';
-                    }}
+              <div className="h-48 bg-slate-100 relative border-b border-slate-100">
+                 <ImageWithFallback 
+                    src="assets/zurich-street.jpg" 
                     alt="Rue calme Zurich" 
-                    className="absolute inset-0 w-full h-full object-cover z-10 transition-opacity duration-300"
+                    className="absolute inset-0 w-full h-full object-cover"
                  />
-                 <div className="text-center z-0 flex flex-col items-center justify-center absolute inset-0">
-                    <ImageIcon className="w-8 h-8 text-slate-300 mx-auto mb-2" />
-                    <span className="text-xs font-mono text-slate-400 bg-white px-2 py-1 rounded">/assets/zurich-street.jpg</span>
-                 </div>
               </div>
               <div className="p-6 flex-1">
                  <div className="flex items-center gap-2 mb-2 text-emerald-600 font-medium text-sm">
@@ -161,37 +114,19 @@ export const AnalysisPage: React.FC = () => {
            {/* DUBAI */}
            <div className="bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden flex flex-col">
               <div className="grid grid-cols-2 h-48 border-b border-slate-100">
-                  <div className="bg-slate-50 relative flex items-center justify-center border-r border-slate-100 overflow-hidden">
-                     <img 
-                        src="/assets/dubai-luxury.jpg" 
-                        onError={(e) => {
-                          e.currentTarget.style.opacity = '0';
-                        }}
-                        onLoad={(e) => {
-                          e.currentTarget.style.opacity = '1';
-                          const sibling = e.currentTarget.nextElementSibling as HTMLElement;
-                          if(sibling) sibling.style.display = 'none';
-                        }}
+                  <div className="bg-slate-50 relative border-r border-slate-100">
+                     <ImageWithFallback 
+                        src="assets/dubai-luxury.jpg" 
                         alt="Luxe Dubaï" 
-                        className="absolute inset-0 w-full h-full object-cover z-10 transition-opacity duration-300" 
+                        className="absolute inset-0 w-full h-full object-cover" 
                      />
-                     <span className="text-[10px] text-slate-400 z-0 absolute inset-0 flex items-center justify-center">/assets/dubai-luxury.jpg</span>
                   </div>
-                  <div className="bg-slate-100 relative flex items-center justify-center overflow-hidden">
-                     <img 
-                        src="/assets/dubai-labor.jpg" 
-                        onError={(e) => {
-                          e.currentTarget.style.opacity = '0';
-                        }}
-                        onLoad={(e) => {
-                          e.currentTarget.style.opacity = '1';
-                          const sibling = e.currentTarget.nextElementSibling as HTMLElement;
-                          if(sibling) sibling.style.display = 'none';
-                        }}
+                  <div className="bg-slate-100 relative">
+                     <ImageWithFallback 
+                        src="assets/dubai-labor.jpg" 
                         alt="Travail Dubaï" 
-                        className="absolute inset-0 w-full h-full object-cover z-10 transition-opacity duration-300" 
+                        className="absolute inset-0 w-full h-full object-cover" 
                      />
-                     <span className="text-[10px] text-slate-400 z-0 absolute inset-0 flex items-center justify-center">/assets/dubai-labor.jpg</span>
                   </div>
               </div>
               <div className="p-6 flex-1">
@@ -203,24 +138,12 @@ export const AnalysisPage: React.FC = () => {
            </div>
            {/* ZURICH */}
            <div className="bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden flex flex-col">
-              <div className="h-48 bg-slate-100 relative border-b border-slate-100 flex items-center justify-center">
-                 <img 
-                    src="/assets/zurich-housing.jpg" 
-                    onError={(e) => {
-                      e.currentTarget.style.opacity = '0';
-                    }}
-                    onLoad={(e) => {
-                      e.currentTarget.style.opacity = '1';
-                      const sibling = e.currentTarget.nextElementSibling as HTMLElement;
-                      if(sibling) sibling.style.display = 'none';
-                    }}
+              <div className="h-48 bg-slate-100 relative border-b border-slate-100">
+                 <ImageWithFallback 
+                    src="assets/zurich-housing.jpg" 
                     alt="Logement Zurich" 
-                    className="absolute inset-0 w-full h-full object-cover z-10 transition-opacity duration-300" 
+                    className="absolute inset-0 w-full h-full object-cover" 
                  />
-                 <div className="text-center z-0 flex flex-col items-center justify-center absolute inset-0">
-                    <ImageIcon className="w-8 h-8 text-slate-300 mx-auto mb-2" />
-                    <span className="text-xs font-mono text-slate-400 bg-white px-2 py-1 rounded">/assets/zurich-housing.jpg</span>
-                 </div>
               </div>
               <div className="p-6 flex-1">
                  <h3 className="font-bold text-lg mb-2 text-emerald-600">Zurich : Tissu Homogène</h3>

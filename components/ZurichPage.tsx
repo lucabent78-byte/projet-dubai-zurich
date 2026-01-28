@@ -5,12 +5,11 @@ import {
   Wallet,
   Map,
   Vote,
-  TrendingUp,
-  Image as ImageIcon
+  TrendingUp
 } from 'lucide-react';
 import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid } from 'recharts';
+import { ImageWithFallback } from './ImageWithFallback';
 
-// Données démographiques approximatives pour Zurich (Ville) montrant la stabilité
 const zurichPopulationData = [
   { year: '1970', population: 422000 },
   { year: '1980', population: 369000 },
@@ -24,7 +23,6 @@ const zurichPopulationData = [
 export const ZurichPage: React.FC = () => {
   return (
     <div className="space-y-6 animate-fade-in pb-12">
-      {/* Header Section */}
       <header className="space-y-2">
         <h1 className="text-4xl font-bold text-slate-900">Zurich, Suisse</h1>
         <p className="text-lg text-slate-600 max-w-2xl">
@@ -32,10 +30,9 @@ export const ZurichPage: React.FC = () => {
         </p>
       </header>
 
-      {/* Bento Grid */}
       <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 auto-rows-[minmax(180px,auto)]">
 
-        {/* 1. Localisation & Situation (Large Card - Matching Dubai) */}
+        {/* 1. Localisation */}
         <div className="col-span-1 md:col-span-2 row-span-2 bg-white p-6 rounded-3xl shadow-sm border border-slate-100 flex flex-col gap-4">
           <div className="flex items-center gap-2 text-blue-600 mb-2">
             <Map className="w-6 h-6" />
@@ -49,31 +46,16 @@ export const ZurichPage: React.FC = () => {
               <strong className="text-slate-900">Cadre :</strong> Un environnement contraint par la topographie (collines, lac) qui limite naturellement l'étalement urbain, contrairement au désert ouvert de Dubaï.
             </p>
           </div>
-          
-          {/* IMAGE CONTAINER */}
-          <div className="mt-auto h-64 bg-slate-50 rounded-xl overflow-hidden relative group border-2 border-dashed border-slate-300 flex flex-col items-center justify-center p-4 text-center">
-             <img 
-               src="/assets/zurich-aerial.jpg" 
-               onError={(e) => {
-                 e.currentTarget.style.opacity = '0';
-               }}
-               onLoad={(e) => {
-                 e.currentTarget.style.opacity = '1';
-                 const sibling = e.currentTarget.nextElementSibling as HTMLElement;
-                 if(sibling) sibling.style.display = 'none';
-               }}
+          <div className="mt-auto h-64 bg-slate-50 rounded-xl overflow-hidden relative border border-slate-100">
+             <ImageWithFallback 
+               src="assets/zurich-aerial.jpg" 
                alt="Vue aérienne de Zurich" 
-               className="absolute inset-0 w-full h-full object-cover z-10 transition-opacity duration-300"
+               className="absolute inset-0 w-full h-full object-cover"
              />
-             <div className="z-0 flex flex-col items-center justify-center absolute inset-0 bg-slate-50">
-                <ImageIcon className="w-10 h-10 text-slate-300 mb-2" />
-                <span className="text-xs font-bold text-slate-400 bg-slate-200 px-2 py-1 rounded mb-1">IMAGE MANQUANTE</span>
-                <p className="text-[10px] text-slate-400 font-mono">/assets/zurich-aerial.jpg</p>
-             </div>
           </div>
         </div>
 
-        {/* 2. Démographie (Chart Card - Replacing History) */}
+        {/* 2. Démographie */}
         <div className="col-span-1 md:col-span-2 row-span-2 bg-white p-6 rounded-3xl shadow-sm border border-slate-100 flex flex-col">
           <div className="flex items-center gap-2 text-purple-600 mb-4">
             <TrendingUp className="w-6 h-6" />
@@ -114,7 +96,7 @@ export const ZurichPage: React.FC = () => {
           </div>
         </div>
 
-        {/* 3. Économie (Small Card - Matching Dubai) */}
+        {/* 3. Économie */}
         <div className="col-span-1 md:col-span-1 bg-white p-6 rounded-3xl shadow-sm border border-slate-100">
           <div className="flex items-center gap-2 text-emerald-600 mb-3">
             <Wallet className="w-6 h-6" />
@@ -127,7 +109,7 @@ export const ZurichPage: React.FC = () => {
           </p>
         </div>
 
-        {/* 4. Qualité de Vie (Small Card - Matching Dubai Logistics) */}
+        {/* 4. Qualité de Vie */}
         <div className="col-span-1 md:col-span-1 bg-gradient-to-br from-emerald-900 to-emerald-800 text-white p-6 rounded-3xl shadow-lg flex flex-col justify-between">
           <div>
             <h2 className="text-lg font-semibold mb-4 flex items-center gap-2">
@@ -137,28 +119,16 @@ export const ZurichPage: React.FC = () => {
                Régulièrement élue ville offrant la meilleure qualité de vie au monde. Mobilité douce, propreté et sécurité.
             </p>
           </div>
-          {/* IMAGE CONTAINER */}
-          <div className="mt-4 h-20 w-full bg-white/10 rounded-lg overflow-hidden relative border border-white/10 flex items-center justify-center">
-             <img 
-               src="/assets/zurich-lake.jpg" 
-               onError={(e) => {
-                 e.currentTarget.style.opacity = '0';
-               }}
-               onLoad={(e) => {
-                 e.currentTarget.style.opacity = '1';
-                 const sibling = e.currentTarget.nextElementSibling as HTMLElement;
-                 if(sibling) sibling.style.display = 'none';
-               }}
+          <div className="mt-4 h-20 w-full bg-white/10 rounded-lg overflow-hidden relative border border-white/10">
+             <ImageWithFallback 
+               src="assets/zurich-lake.jpg" 
                alt="Parc urbain ou bord du lac" 
-               className="absolute inset-0 w-full h-full object-cover z-10 transition-opacity duration-300"
+               className="absolute inset-0 w-full h-full object-cover opacity-80"
              />
-             <div className="text-[10px] text-emerald-200/70 text-center px-1 z-0 absolute inset-0 flex items-center justify-center">
-               /assets/zurich-lake.jpg
-             </div>
           </div>
         </div>
 
-        {/* 5. Régime Politique (Large - Matching Dubai Regime slot) */}
+        {/* 5. Régime Politique */}
         <div className="col-span-1 md:col-span-2 bg-white p-6 rounded-3xl shadow-sm border border-slate-100">
            <div className="flex items-center justify-between mb-4">
               <div className="flex items-center gap-2 text-orange-600">
@@ -178,26 +148,12 @@ export const ZurichPage: React.FC = () => {
                     Ce processus garantit la stabilité et l'acceptation sociale, mais ralentit considérablement la vitesse de transformation urbaine par rapport à Dubaï.
                  </p>
               </div>
-              
-              {/* IMAGE CONTAINER: POLITIQUE */}
-              <div className="h-40 bg-slate-50 rounded-xl relative overflow-hidden border-2 border-dashed border-slate-300 flex items-center justify-center">
-                 <img 
-                   src="/assets/zurich-politics.jpg" 
-                   onError={(e) => {
-                     e.currentTarget.style.opacity = '0';
-                   }}
-                   onLoad={(e) => {
-                     e.currentTarget.style.opacity = '1';
-                     const sibling = e.currentTarget.nextElementSibling as HTMLElement;
-                     if(sibling) sibling.style.display = 'none';
-                   }}
+              <div className="h-40 bg-slate-50 rounded-xl relative overflow-hidden border border-slate-100">
+                 <ImageWithFallback 
+                   src="assets/zurich-politics.jpg" 
                    alt="Hôtel de ville de Zurich" 
-                   className="absolute inset-0 w-full h-full object-cover z-10 transition-opacity duration-300"
+                   className="absolute inset-0 w-full h-full object-cover"
                  />
-                 <div className="text-center p-2 z-0 flex flex-col items-center justify-center absolute inset-0">
-                    <Landmark className="text-slate-300 w-6 h-6 mx-auto mb-1" />
-                    <span className="text-[10px] text-slate-400 block">/assets/zurich-politics.jpg</span>
-                 </div>
               </div>
            </div>
         </div>

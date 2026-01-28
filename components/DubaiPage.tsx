@@ -5,12 +5,11 @@ import {
   Plane, 
   Anchor, 
   DollarSign, 
-  Crown,
-  Image as ImageIcon
+  Crown
 } from 'lucide-react';
 import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid } from 'recharts';
+import { ImageWithFallback } from './ImageWithFallback';
 
-// Data extracted from PDF page 1 "Démographie"
 const populationData = [
   { year: '1975', population: 183187 },
   { year: '1980', population: 276301 },
@@ -26,7 +25,6 @@ const populationData = [
 export const DubaiPage: React.FC = () => {
   return (
     <div className="space-y-6 animate-fade-in pb-12">
-      {/* Header Section */}
       <header className="space-y-2">
         <h1 className="text-4xl font-bold text-slate-900">Dubaï, Émirats Arabes Unis</h1>
         <p className="text-lg text-slate-600 max-w-2xl">
@@ -34,10 +32,9 @@ export const DubaiPage: React.FC = () => {
         </p>
       </header>
 
-      {/* Bento Grid */}
       <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 auto-rows-[minmax(180px,auto)]">
         
-        {/* 1. Localisation & Situation (Large Card) */}
+        {/* 1. Localisation */}
         <div className="col-span-1 md:col-span-2 row-span-2 bg-white p-6 rounded-3xl shadow-sm border border-slate-100 flex flex-col gap-4">
           <div className="flex items-center gap-2 text-blue-600 mb-2">
             <MapPin className="w-6 h-6" />
@@ -48,36 +45,16 @@ export const DubaiPage: React.FC = () => {
               <strong className="text-slate-900">Situation :</strong> Dubaï est située au Moyen-Orient, au nord-est de la péninsule Arabique. Position stratégique de carrefour entre l'Europe, l'Asie et l'Afrique.
             </p>
           </div>
-          
-          {/* IMAGE CONTAINER */}
-          <div className="mt-auto h-64 bg-slate-50 rounded-xl overflow-hidden relative border-2 border-dashed border-slate-300">
-             {/* 
-                NOTE IMPORTANTE: 
-                L'image doit être dans 'public/assets/dubai-map.jpg'.
-                Le chemin src commence par un slash '/' pour indiquer la racine du dossier public.
-             */}
-             <img 
-               src="/assets/dubai-map.jpg" 
+          <div className="mt-auto h-64 bg-slate-50 rounded-xl overflow-hidden relative border border-slate-100">
+             <ImageWithFallback 
+               src="assets/dubai-map.jpg" 
                alt="Carte géopolitique du Moyen-Orient" 
-               className="absolute inset-0 w-full h-full object-cover z-20"
-               onError={(e) => e.currentTarget.style.display = 'none'} 
+               className="absolute inset-0 w-full h-full object-cover"
              />
-             
-             {/* FALLBACK (Visible uniquement si l'image est masquée par onError) */}
-             <div className="absolute inset-0 flex flex-col items-center justify-center bg-slate-100 z-10 text-center p-4">
-                <ImageIcon className="w-10 h-10 text-slate-400 mb-2" />
-                <span className="text-xs font-bold text-slate-500 bg-white px-2 py-1 rounded border border-slate-200 shadow-sm mb-1">
-                  IMAGE NON TROUVÉE
-                </span>
-                <p className="text-[10px] text-slate-400 font-mono mt-1">
-                  Vérifiez que le fichier existe ici :<br/>
-                  <span className="text-blue-600 font-bold">/public/assets/dubai-map.jpg</span>
-                </p>
-             </div>
           </div>
         </div>
 
-        {/* 2. Démographie (Chart Card) */}
+        {/* 2. Démographie */}
         <div className="col-span-1 md:col-span-2 row-span-2 bg-white p-6 rounded-3xl shadow-sm border border-slate-100 flex flex-col">
           <div className="flex items-center gap-2 text-purple-600 mb-4">
             <TrendingUp className="w-6 h-6" />
@@ -117,7 +94,7 @@ export const DubaiPage: React.FC = () => {
           </div>
         </div>
 
-        {/* 3. Économie (PUB) */}
+        {/* 3. Économie */}
         <div className="col-span-1 md:col-span-1 bg-white p-6 rounded-3xl shadow-sm border border-slate-100">
           <div className="flex items-center gap-2 text-emerald-600 mb-3">
             <DollarSign className="w-6 h-6" />
@@ -130,7 +107,7 @@ export const DubaiPage: React.FC = () => {
           </p>
         </div>
 
-        {/* 4. Connexions (Hub Logistique) */}
+        {/* 4. Connexions */}
         <div className="col-span-1 md:col-span-1 bg-gradient-to-br from-slate-900 to-slate-800 text-white p-6 rounded-3xl shadow-lg flex flex-col justify-between">
           <div>
             <h2 className="text-lg font-semibold mb-4 flex items-center gap-2">
@@ -143,25 +120,16 @@ export const DubaiPage: React.FC = () => {
               </li>
             </ul>
           </div>
-          
-          {/* IMAGE CONTAINER */}
           <div className="mt-4 h-24 w-full bg-white/5 rounded-lg overflow-hidden relative border border-white/10">
-             <img 
-               src="/assets/dubai-logistics.jpg" 
+             <ImageWithFallback 
+               src="assets/dubai-logistics.jpg" 
                alt="Vue aérienne du port Jebel Ali" 
-               className="absolute inset-0 w-full h-full object-cover z-20"
-               onError={(e) => e.currentTarget.style.display = 'none'} 
+               className="absolute inset-0 w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity"
              />
-             <div className="absolute inset-0 flex flex-col items-center justify-center bg-slate-800 z-10 p-2 text-center">
-                <ImageIcon className="w-6 h-6 text-slate-500 mb-1" />
-                <span className="text-[10px] text-slate-400">
-                  /public/assets/dubai-logistics.jpg
-                </span>
-             </div>
           </div>
         </div>
 
-        {/* 5. Régime Politique (Modifié) */}
+        {/* 5. Régime Politique */}
         <div className="col-span-1 md:col-span-2 bg-white p-6 rounded-3xl shadow-sm border border-slate-100">
            <div className="flex items-center justify-between mb-4">
               <div className="flex items-center gap-2 text-orange-600">
@@ -181,19 +149,12 @@ export const DubaiPage: React.FC = () => {
                     Une planification stratégique imposée pour maintenir la compétitivité mondiale, sans opposition politique majeure freinant les grands projets.
                  </p>
               </div>
-              
-              {/* IMAGE CONTAINER: POLITIQUE */}
-              <div className="h-40 bg-slate-50 rounded-xl relative overflow-hidden border-2 border-dashed border-slate-300">
-                 <img 
-                   src="/assets/dubai-politics.jpg" 
+              <div className="h-40 bg-slate-50 rounded-xl relative overflow-hidden border border-slate-100">
+                 <ImageWithFallback 
+                   src="assets/dubai-politics.jpg" 
                    alt="Portrait de Cheikh Mohammed" 
-                   className="absolute inset-0 w-full h-full object-cover z-20"
-                   onError={(e) => e.currentTarget.style.display = 'none'} 
+                   className="absolute inset-0 w-full h-full object-cover"
                  />
-                 <div className="absolute inset-0 flex flex-col items-center justify-center bg-slate-100 z-10 text-center p-2">
-                    <Crown className="text-slate-300 w-6 h-6 mx-auto mb-1" />
-                    <span className="text-[10px] text-slate-400 block">/public/assets/dubai-politics.jpg</span>
-                 </div>
               </div>
            </div>
         </div>
