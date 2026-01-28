@@ -139,7 +139,7 @@ export const ZurichPage: React.FC = () => {
                className="absolute inset-0 w-full h-full object-cover z-10" 
              />
              <div className="text-[10px] text-emerald-200/70 text-center px-1 z-0">
-               zurich-lake.jpg
+               /assets/zurich-lake.jpg
              </div>
           </div>
         </div>
@@ -175,7 +175,7 @@ export const ZurichPage: React.FC = () => {
                  />
                  <div className="text-center p-2 z-0">
                     <Landmark className="text-slate-300 w-6 h-6 mx-auto mb-1" />
-                    <span className="text-[10px] text-slate-400 block">zurich-politics.jpg</span>
+                    <span className="text-[10px] text-slate-400 block">/assets/zurich-politics.jpg</span>
                  </div>
               </div>
            </div>

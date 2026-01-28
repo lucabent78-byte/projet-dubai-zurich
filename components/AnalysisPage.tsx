@@ -33,7 +33,7 @@ export const AnalysisPage: React.FC = () => {
                  />
                  <div className="text-center z-0">
                     <ImageIcon className="w-8 h-8 text-slate-300 mx-auto mb-2" />
-                    <span className="text-xs font-mono text-slate-400 bg-white px-2 py-1 rounded">dubai-skyline.jpg</span>
+                    <span className="text-xs font-mono text-slate-400 bg-white px-2 py-1 rounded">/assets/dubai-skyline.jpg</span>
                  </div>
               </div>
               <div className="p-6 flex-1">
@@ -54,7 +54,7 @@ export const AnalysisPage: React.FC = () => {
                  />
                  <div className="text-center z-0">
                     <ImageIcon className="w-8 h-8 text-slate-300 mx-auto mb-2" />
-                    <span className="text-xs font-mono text-slate-400 bg-white px-2 py-1 rounded">zurich-roofs.jpg</span>
+                    <span className="text-xs font-mono text-slate-400 bg-white px-2 py-1 rounded">/assets/zurich-roofs.jpg</span>
                  </div>
               </div>
               <div className="p-6 flex-1">
@@ -85,7 +85,7 @@ export const AnalysisPage: React.FC = () => {
                  />
                  <div className="text-center z-0">
                     <ImageIcon className="w-8 h-8 text-slate-300 mx-auto mb-2" />
-                    <span className="text-xs font-mono text-slate-400 bg-white px-2 py-1 rounded">dubai-construction.jpg</span>
+                    <span className="text-xs font-mono text-slate-400 bg-white px-2 py-1 rounded">/assets/dubai-construction.jpg</span>
                  </div>
               </div>
               <div className="p-6 flex-1">
@@ -108,7 +108,7 @@ export const AnalysisPage: React.FC = () => {
                  />
                  <div className="text-center z-0">
                     <ImageIcon className="w-8 h-8 text-slate-300 mx-auto mb-2" />
-                    <span className="text-xs font-mono text-slate-400 bg-white px-2 py-1 rounded">zurich-street.jpg</span>
+                    <span className="text-xs font-mono text-slate-400 bg-white px-2 py-1 rounded">/assets/zurich-street.jpg</span>
                  </div>
               </div>
               <div className="p-6 flex-1">
@@ -140,7 +140,7 @@ export const AnalysisPage: React.FC = () => {
                         alt="Villa de luxe Palm Jumeirah" 
                         className="absolute inset-0 w-full h-full object-cover z-10" 
                      />
-                     <span className="text-[10px] text-slate-400 z-0">dubai-luxury.jpg</span>
+                     <span className="text-[10px] text-slate-400 z-0">/assets/dubai-luxury.jpg</span>
                   </div>
                   <div className="bg-slate-100 relative flex items-center justify-center overflow-hidden">
                      <img 
@@ -149,7 +149,7 @@ export const AnalysisPage: React.FC = () => {
                         alt="Camp de travail Sonapur" 
                         className="absolute inset-0 w-full h-full object-cover z-10" 
                      />
-                     <span className="text-[10px] text-slate-400 z-0">dubai-labor.jpg</span>
+                     <span className="text-[10px] text-slate-400 z-0">/assets/dubai-labor.jpg</span>
                   </div>
               </div>
               <div className="p-6 flex-1">
@@ -170,7 +170,7 @@ export const AnalysisPage: React.FC = () => {
                  />
                  <div className="text-center z-0">
                     <ImageIcon className="w-8 h-8 text-slate-300 mx-auto mb-2" />
-                    <span className="text-xs font-mono text-slate-400 bg-white px-2 py-1 rounded">zurich-housing.jpg</span>
+                    <span className="text-xs font-mono text-slate-400 bg-white px-2 py-1 rounded">/assets/zurich-housing.jpg</span>
                  </div>
               </div>
               <div className="p-6 flex-1">

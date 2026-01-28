@@ -51,7 +51,7 @@ export const DubaiPage: React.FC = () => {
           
           {/* IMAGE CONTAINER */}
           <div className="mt-auto h-64 bg-slate-50 rounded-xl overflow-hidden relative group border-2 border-dashed border-slate-300 flex flex-col items-center justify-center p-4 text-center">
-             {/* Image updated to point to public folder */}
+             {/* Image updated to point to public/assets folder */}
              <img 
                src="/assets/dubai-map.jpg" 
                onError={(e) => e.currentTarget.style.display = 'none'}
@@ -142,7 +142,7 @@ export const DubaiPage: React.FC = () => {
                className="absolute inset-0 w-full h-full object-cover z-10" 
              />
              <div className="text-[10px] text-slate-400 text-center px-1 z-0">
-               IMAGE MANQUANTE<br/>dubai-logistics.jpg
+               IMAGE MANQUANTE<br/>/assets/dubai-logistics.jpg
              </div>
           </div>
         </div>
@@ -178,7 +178,7 @@ export const DubaiPage: React.FC = () => {
                  />
                  <div className="text-center p-2 z-0">
                     <Crown className="text-slate-300 w-6 h-6 mx-auto mb-1" />
-                    <span className="text-[10px] text-slate-400 block">dubai-politics.jpg</span>
+                    <span className="text-[10px] text-slate-400 block">/assets/dubai-politics.jpg</span>
                  </div>
               </div>
            </div>
