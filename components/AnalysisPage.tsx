@@ -26,14 +26,14 @@ export const AnalysisPage: React.FC = () => {
            <div className="bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden flex flex-col">
               <div className="h-48 bg-slate-100 relative border-b border-slate-100 flex items-center justify-center">
                  <img 
-                    src="/assets/dubai-skyline.jpg" 
+                    src="/assert/dubai-skyline.jpg" 
                     onError={(e) => e.currentTarget.style.display = 'none'}
                     alt="Skyline Dubaï gratte-ciels" 
                     className="absolute inset-0 w-full h-full object-cover z-10" 
                  />
                  <div className="text-center z-0">
                     <ImageIcon className="w-8 h-8 text-slate-300 mx-auto mb-2" />
-                    <span className="text-xs font-mono text-slate-400 bg-white px-2 py-1 rounded">dubai-skyline.jpg</span>
+                    <span className="text-xs font-mono text-slate-400 bg-white px-2 py-1 rounded">/assert/dubai-skyline.jpg</span>
                  </div>
               </div>
               <div className="p-6 flex-1">
@@ -47,14 +47,14 @@ export const AnalysisPage: React.FC = () => {
            <div className="bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden flex flex-col">
               <div className="h-48 bg-slate-100 relative border-b border-slate-100 flex items-center justify-center">
                  <img 
-                    src="/assets/zurich-roofs.jpg" 
+                    src="/assert/zurich-roofs.jpg" 
                     onError={(e) => e.currentTarget.style.display = 'none'}
                     alt="Vue toits Zurich hauteur limitée" 
                     className="absolute inset-0 w-full h-full object-cover z-10" 
                  />
                  <div className="text-center z-0">
                     <ImageIcon className="w-8 h-8 text-slate-300 mx-auto mb-2" />
-                    <span className="text-xs font-mono text-slate-400 bg-white px-2 py-1 rounded">zurich-roofs.jpg</span>
+                    <span className="text-xs font-mono text-slate-400 bg-white px-2 py-1 rounded">/assert/zurich-roofs.jpg</span>
                  </div>
               </div>
               <div className="p-6 flex-1">
@@ -78,14 +78,14 @@ export const AnalysisPage: React.FC = () => {
            <div className="bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden flex flex-col">
               <div className="h-48 bg-slate-100 relative border-b border-slate-100 flex items-center justify-center">
                  <img 
-                    src="/assets/dubai-construction.jpg" 
+                    src="/assert/dubai-construction.jpg" 
                     onError={(e) => e.currentTarget.style.display = 'none'}
                     alt="Grues et construction Dubaï" 
                     className="absolute inset-0 w-full h-full object-cover z-10" 
                  />
                  <div className="text-center z-0">
                     <ImageIcon className="w-8 h-8 text-slate-300 mx-auto mb-2" />
-                    <span className="text-xs font-mono text-slate-400 bg-white px-2 py-1 rounded">dubai-construction.jpg</span>
+                    <span className="text-xs font-mono text-slate-400 bg-white px-2 py-1 rounded">/assert/dubai-construction.jpg</span>
                  </div>
               </div>
               <div className="p-6 flex-1">
@@ -101,14 +101,14 @@ export const AnalysisPage: React.FC = () => {
            <div className="bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden flex flex-col">
               <div className="h-48 bg-slate-100 relative border-b border-slate-100 flex items-center justify-center">
                  <img 
-                    src="/assets/zurich-street.jpg" 
+                    src="/assert/zurich-street.jpg" 
                     onError={(e) => e.currentTarget.style.display = 'none'}
                     alt="Rue calme Zurich bâtiment rénové" 
                     className="absolute inset-0 w-full h-full object-cover z-10" 
                  />
                  <div className="text-center z-0">
                     <ImageIcon className="w-8 h-8 text-slate-300 mx-auto mb-2" />
-                    <span className="text-xs font-mono text-slate-400 bg-white px-2 py-1 rounded">zurich-street.jpg</span>
+                    <span className="text-xs font-mono text-slate-400 bg-white px-2 py-1 rounded">/assert/zurich-street.jpg</span>
                  </div>
               </div>
               <div className="p-6 flex-1">
@@ -135,21 +135,21 @@ export const AnalysisPage: React.FC = () => {
               <div className="grid grid-cols-2 h-48 border-b border-slate-100">
                   <div className="bg-slate-50 relative flex items-center justify-center border-r border-slate-100 overflow-hidden">
                      <img 
-                        src="/assets/dubai-luxury.jpg" 
+                        src="/assert/dubai-luxury.jpg" 
                         onError={(e) => e.currentTarget.style.display = 'none'}
                         alt="Villa de luxe Palm Jumeirah" 
                         className="absolute inset-0 w-full h-full object-cover z-10" 
                      />
-                     <span className="text-[10px] text-slate-400 z-0">dubai-luxury.jpg</span>
+                     <span className="text-[10px] text-slate-400 z-0">/assert/dubai-luxury.jpg</span>
                   </div>
                   <div className="bg-slate-100 relative flex items-center justify-center overflow-hidden">
                      <img 
-                        src="/assets/dubai-labor.jpg" 
+                        src="/assert/dubai-labor.jpg" 
                         onError={(e) => e.currentTarget.style.display = 'none'}
                         alt="Camp de travail Sonapur" 
                         className="absolute inset-0 w-full h-full object-cover z-10" 
                      />
-                     <span className="text-[10px] text-slate-400 z-0">dubai-labor.jpg</span>
+                     <span className="text-[10px] text-slate-400 z-0">/assert/dubai-labor.jpg</span>
                   </div>
               </div>
               <div className="p-6 flex-1">
@@ -163,14 +163,14 @@ export const AnalysisPage: React.FC = () => {
            <div className="bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden flex flex-col">
               <div className="h-48 bg-slate-100 relative border-b border-slate-100 flex items-center justify-center">
                  <img 
-                    src="/assets/zurich-housing.jpg" 
+                    src="/assert/zurich-housing.jpg" 
                     onError={(e) => e.currentTarget.style.display = 'none'}
                     alt="Logements coopératifs Zurich ou quartier mixte" 
                     className="absolute inset-0 w-full h-full object-cover z-10" 
                  />
                  <div className="text-center z-0">
                     <ImageIcon className="w-8 h-8 text-slate-300 mx-auto mb-2" />
-                    <span className="text-xs font-mono text-slate-400 bg-white px-2 py-1 rounded">zurich-housing.jpg</span>
+                    <span className="text-xs font-mono text-slate-400 bg-white px-2 py-1 rounded">/assert/zurich-housing.jpg</span>
                  </div>
               </div>
               <div className="p-6 flex-1">
