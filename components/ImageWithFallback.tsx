@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Image as ImageIcon, AlertCircle, FolderOpen } from 'lucide-react';
+import { AlertCircle, FolderOpen } from 'lucide-react';
 
 interface ImageWithFallbackProps {
   src: string;
@@ -9,9 +9,6 @@ interface ImageWithFallbackProps {
 
 export const ImageWithFallback: React.FC<ImageWithFallbackProps> = ({ src, alt, className }) => {
   const [error, setError] = useState(false);
-
-  // Determine the file name for display
-  const fileName = src.split('/').pop();
 
   if (error) {
     return (

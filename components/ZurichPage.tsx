@@ -1,6 +1,5 @@
 import React from 'react';
 import { 
-  Landmark, 
   Leaf, 
   Wallet,
   Map,
