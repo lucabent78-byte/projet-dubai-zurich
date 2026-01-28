@@ -26,14 +26,21 @@ export const AnalysisPage: React.FC = () => {
            <div className="bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden flex flex-col">
               <div className="h-48 bg-slate-100 relative border-b border-slate-100 flex items-center justify-center">
                  <img 
-                    src="assets/dubai-skyline.jpg" 
-                    onError={(e) => e.currentTarget.style.display = 'none'}
+                    src="/assets/dubai-skyline.jpg" 
+                    onError={(e) => {
+                      e.currentTarget.style.opacity = '0';
+                    }}
+                    onLoad={(e) => {
+                      e.currentTarget.style.opacity = '1';
+                      const sibling = e.currentTarget.nextElementSibling as HTMLElement;
+                      if(sibling) sibling.style.display = 'none';
+                    }}
                     alt="Skyline Dubaï" 
-                    className="absolute inset-0 w-full h-full object-cover z-10" 
+                    className="absolute inset-0 w-full h-full object-cover z-10 transition-opacity duration-300"
                  />
-                 <div className="text-center z-0">
+                 <div className="text-center z-0 flex flex-col items-center justify-center absolute inset-0">
                     <ImageIcon className="w-8 h-8 text-slate-300 mx-auto mb-2" />
-                    <span className="text-xs font-mono text-slate-400 bg-white px-2 py-1 rounded">public/assets/dubai-skyline.jpg</span>
+                    <span className="text-xs font-mono text-slate-400 bg-white px-2 py-1 rounded">/assets/dubai-skyline.jpg</span>
                  </div>
               </div>
               <div className="p-6 flex-1">
@@ -47,14 +54,21 @@ export const AnalysisPage: React.FC = () => {
            <div className="bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden flex flex-col">
               <div className="h-48 bg-slate-100 relative border-b border-slate-100 flex items-center justify-center">
                  <img 
-                    src="assets/zurich-roofs.jpg" 
-                    onError={(e) => e.currentTarget.style.display = 'none'}
+                    src="/assets/zurich-roofs.jpg" 
+                    onError={(e) => {
+                      e.currentTarget.style.opacity = '0';
+                    }}
+                    onLoad={(e) => {
+                      e.currentTarget.style.opacity = '1';
+                      const sibling = e.currentTarget.nextElementSibling as HTMLElement;
+                      if(sibling) sibling.style.display = 'none';
+                    }}
                     alt="Vue toits Zurich" 
-                    className="absolute inset-0 w-full h-full object-cover z-10" 
+                    className="absolute inset-0 w-full h-full object-cover z-10 transition-opacity duration-300"
                  />
-                 <div className="text-center z-0">
+                 <div className="text-center z-0 flex flex-col items-center justify-center absolute inset-0">
                     <ImageIcon className="w-8 h-8 text-slate-300 mx-auto mb-2" />
-                    <span className="text-xs font-mono text-slate-400 bg-white px-2 py-1 rounded">public/assets/zurich-roofs.jpg</span>
+                    <span className="text-xs font-mono text-slate-400 bg-white px-2 py-1 rounded">/assets/zurich-roofs.jpg</span>
                  </div>
               </div>
               <div className="p-6 flex-1">
@@ -78,14 +92,21 @@ export const AnalysisPage: React.FC = () => {
            <div className="bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden flex flex-col">
               <div className="h-48 bg-slate-100 relative border-b border-slate-100 flex items-center justify-center">
                  <img 
-                    src="assets/dubai-construction.jpg" 
-                    onError={(e) => e.currentTarget.style.display = 'none'}
+                    src="/assets/dubai-construction.jpg" 
+                    onError={(e) => {
+                      e.currentTarget.style.opacity = '0';
+                    }}
+                    onLoad={(e) => {
+                      e.currentTarget.style.opacity = '1';
+                      const sibling = e.currentTarget.nextElementSibling as HTMLElement;
+                      if(sibling) sibling.style.display = 'none';
+                    }}
                     alt="Construction Dubaï" 
-                    className="absolute inset-0 w-full h-full object-cover z-10" 
+                    className="absolute inset-0 w-full h-full object-cover z-10 transition-opacity duration-300"
                  />
-                 <div className="text-center z-0">
+                 <div className="text-center z-0 flex flex-col items-center justify-center absolute inset-0">
                     <ImageIcon className="w-8 h-8 text-slate-300 mx-auto mb-2" />
-                    <span className="text-xs font-mono text-slate-400 bg-white px-2 py-1 rounded">public/assets/dubai-construction.jpg</span>
+                    <span className="text-xs font-mono text-slate-400 bg-white px-2 py-1 rounded">/assets/dubai-construction.jpg</span>
                  </div>
               </div>
               <div className="p-6 flex-1">
@@ -101,14 +122,21 @@ export const AnalysisPage: React.FC = () => {
            <div className="bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden flex flex-col">
               <div className="h-48 bg-slate-100 relative border-b border-slate-100 flex items-center justify-center">
                  <img 
-                    src="assets/zurich-street.jpg" 
-                    onError={(e) => e.currentTarget.style.display = 'none'}
+                    src="/assets/zurich-street.jpg" 
+                    onError={(e) => {
+                      e.currentTarget.style.opacity = '0';
+                    }}
+                    onLoad={(e) => {
+                      e.currentTarget.style.opacity = '1';
+                      const sibling = e.currentTarget.nextElementSibling as HTMLElement;
+                      if(sibling) sibling.style.display = 'none';
+                    }}
                     alt="Rue calme Zurich" 
-                    className="absolute inset-0 w-full h-full object-cover z-10" 
+                    className="absolute inset-0 w-full h-full object-cover z-10 transition-opacity duration-300"
                  />
-                 <div className="text-center z-0">
+                 <div className="text-center z-0 flex flex-col items-center justify-center absolute inset-0">
                     <ImageIcon className="w-8 h-8 text-slate-300 mx-auto mb-2" />
-                    <span className="text-xs font-mono text-slate-400 bg-white px-2 py-1 rounded">public/assets/zurich-street.jpg</span>
+                    <span className="text-xs font-mono text-slate-400 bg-white px-2 py-1 rounded">/assets/zurich-street.jpg</span>
                  </div>
               </div>
               <div className="p-6 flex-1">
@@ -135,21 +163,35 @@ export const AnalysisPage: React.FC = () => {
               <div className="grid grid-cols-2 h-48 border-b border-slate-100">
                   <div className="bg-slate-50 relative flex items-center justify-center border-r border-slate-100 overflow-hidden">
                      <img 
-                        src="assets/dubai-luxury.jpg" 
-                        onError={(e) => e.currentTarget.style.display = 'none'}
+                        src="/assets/dubai-luxury.jpg" 
+                        onError={(e) => {
+                          e.currentTarget.style.opacity = '0';
+                        }}
+                        onLoad={(e) => {
+                          e.currentTarget.style.opacity = '1';
+                          const sibling = e.currentTarget.nextElementSibling as HTMLElement;
+                          if(sibling) sibling.style.display = 'none';
+                        }}
                         alt="Luxe Dubaï" 
-                        className="absolute inset-0 w-full h-full object-cover z-10" 
+                        className="absolute inset-0 w-full h-full object-cover z-10 transition-opacity duration-300" 
                      />
-                     <span className="text-[10px] text-slate-400 z-0">public/assets/dubai-luxury.jpg</span>
+                     <span className="text-[10px] text-slate-400 z-0 absolute inset-0 flex items-center justify-center">/assets/dubai-luxury.jpg</span>
                   </div>
                   <div className="bg-slate-100 relative flex items-center justify-center overflow-hidden">
                      <img 
-                        src="assets/dubai-labor.jpg" 
-                        onError={(e) => e.currentTarget.style.display = 'none'}
+                        src="/assets/dubai-labor.jpg" 
+                        onError={(e) => {
+                          e.currentTarget.style.opacity = '0';
+                        }}
+                        onLoad={(e) => {
+                          e.currentTarget.style.opacity = '1';
+                          const sibling = e.currentTarget.nextElementSibling as HTMLElement;
+                          if(sibling) sibling.style.display = 'none';
+                        }}
                         alt="Travail Dubaï" 
-                        className="absolute inset-0 w-full h-full object-cover z-10" 
+                        className="absolute inset-0 w-full h-full object-cover z-10 transition-opacity duration-300" 
                      />
-                     <span className="text-[10px] text-slate-400 z-0">public/assets/dubai-labor.jpg</span>
+                     <span className="text-[10px] text-slate-400 z-0 absolute inset-0 flex items-center justify-center">/assets/dubai-labor.jpg</span>
                   </div>
               </div>
               <div className="p-6 flex-1">
@@ -163,14 +205,21 @@ export const AnalysisPage: React.FC = () => {
            <div className="bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden flex flex-col">
               <div className="h-48 bg-slate-100 relative border-b border-slate-100 flex items-center justify-center">
                  <img 
-                    src="assets/zurich-housing.jpg" 
-                    onError={(e) => e.currentTarget.style.display = 'none'}
+                    src="/assets/zurich-housing.jpg" 
+                    onError={(e) => {
+                      e.currentTarget.style.opacity = '0';
+                    }}
+                    onLoad={(e) => {
+                      e.currentTarget.style.opacity = '1';
+                      const sibling = e.currentTarget.nextElementSibling as HTMLElement;
+                      if(sibling) sibling.style.display = 'none';
+                    }}
                     alt="Logement Zurich" 
-                    className="absolute inset-0 w-full h-full object-cover z-10" 
+                    className="absolute inset-0 w-full h-full object-cover z-10 transition-opacity duration-300" 
                  />
-                 <div className="text-center z-0">
+                 <div className="text-center z-0 flex flex-col items-center justify-center absolute inset-0">
                     <ImageIcon className="w-8 h-8 text-slate-300 mx-auto mb-2" />
-                    <span className="text-xs font-mono text-slate-400 bg-white px-2 py-1 rounded">public/assets/zurich-housing.jpg</span>
+                    <span className="text-xs font-mono text-slate-400 bg-white px-2 py-1 rounded">/assets/zurich-housing.jpg</span>
                  </div>
               </div>
               <div className="p-6 flex-1">

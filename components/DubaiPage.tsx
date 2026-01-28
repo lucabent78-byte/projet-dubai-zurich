@@ -52,18 +52,25 @@ export const DubaiPage: React.FC = () => {
           {/* IMAGE CONTAINER */}
           <div className="mt-auto h-64 bg-slate-50 rounded-xl overflow-hidden relative group border-2 border-dashed border-slate-300 flex flex-col items-center justify-center p-4 text-center">
              <img 
-               src="assets/dubai-map.jpg" 
+               src="/assets/dubai-map.jpg" 
                onError={(e) => {
-                 console.error("Failed to load image:", e.currentTarget.src);
-                 e.currentTarget.style.display = 'none';
+                 e.currentTarget.style.opacity = '0'; // Hide image but keep space
+                 e.currentTarget.parentElement?.classList.add('image-error'); // You could add specific styling logic here if needed, but the sibling div handles display
+               }}
+               onLoad={(e) => {
+                 e.currentTarget.style.opacity = '1';
+                 // Hide the fallback content when loaded
+                 const sibling = e.currentTarget.nextElementSibling as HTMLElement;
+                 if(sibling) sibling.style.display = 'none';
                }}
                alt="Carte géopolitique du Moyen-Orient" 
-               className="absolute inset-0 w-full h-full object-cover z-10"
+               className="absolute inset-0 w-full h-full object-cover z-10 transition-opacity duration-300"
              />
-             <div className="z-0 flex flex-col items-center">
-                <ImageIcon className="w-8 h-8 text-slate-400 mb-2" />
-                <span className="text-xs font-mono bg-slate-200 text-slate-600 px-2 py-1 rounded mb-1">IMAGE MANQUANTE</span>
-                <p className="text-xs text-slate-400 italic">Attendu: public/assets/dubai-map.jpg</p>
+             {/* FALLBACK CONTENT (Visible if image fails or hasn't loaded) */}
+             <div className="z-0 flex flex-col items-center justify-center absolute inset-0 bg-slate-50">
+                <ImageIcon className="w-10 h-10 text-slate-300 mb-2" />
+                <span className="text-xs font-bold text-slate-400 bg-slate-200 px-2 py-1 rounded mb-1">IMAGE MANQUANTE</span>
+                <p className="text-[10px] text-slate-400 font-mono">/assets/dubai-map.jpg</p>
              </div>
           </div>
         </div>
@@ -138,16 +145,21 @@ export const DubaiPage: React.FC = () => {
           {/* IMAGE CONTAINER */}
           <div className="mt-4 h-24 w-full bg-white/5 rounded-lg overflow-hidden relative border border-white/10 flex items-center justify-center">
              <img 
-               src="assets/dubai-logistics.jpg" 
+               src="/assets/dubai-logistics.jpg" 
                onError={(e) => {
-                 console.error("Failed to load image:", e.currentTarget.src);
-                 e.currentTarget.style.display = 'none';
+                 e.currentTarget.style.opacity = '0';
+               }}
+               onLoad={(e) => {
+                 e.currentTarget.style.opacity = '1';
+                 const sibling = e.currentTarget.nextElementSibling as HTMLElement;
+                 if(sibling) sibling.style.display = 'none';
                }}
                alt="Vue aérienne du port Jebel Ali" 
-               className="absolute inset-0 w-full h-full object-cover z-10" 
+               className="absolute inset-0 w-full h-full object-cover z-10 transition-opacity duration-300"
              />
-             <div className="text-[10px] text-slate-400 text-center px-1 z-0">
-               IMAGE MANQUANTE<br/>public/assets/dubai-logistics.jpg
+             <div className="text-center z-0 flex flex-col items-center justify-center absolute inset-0">
+                <ImageIcon className="w-6 h-6 text-slate-500 mb-1" />
+                <span className="text-[10px] text-slate-400">/assets/dubai-logistics.jpg</span>
              </div>
           </div>
         </div>
@@ -176,14 +188,21 @@ export const DubaiPage: React.FC = () => {
               {/* IMAGE CONTAINER: POLITIQUE */}
               <div className="h-40 bg-slate-50 rounded-xl relative overflow-hidden border-2 border-dashed border-slate-300 flex items-center justify-center">
                  <img 
-                   src="assets/dubai-politics.jpg" 
-                   onError={(e) => e.currentTarget.style.display = 'none'}
+                   src="/assets/dubai-politics.jpg" 
+                   onError={(e) => {
+                     e.currentTarget.style.opacity = '0';
+                   }}
+                   onLoad={(e) => {
+                     e.currentTarget.style.opacity = '1';
+                     const sibling = e.currentTarget.nextElementSibling as HTMLElement;
+                     if(sibling) sibling.style.display = 'none';
+                   }}
                    alt="Portrait de Cheikh Mohammed" 
-                   className="absolute inset-0 w-full h-full object-cover z-10" 
+                   className="absolute inset-0 w-full h-full object-cover z-10 transition-opacity duration-300"
                  />
-                 <div className="text-center p-2 z-0">
+                 <div className="text-center p-2 z-0 flex flex-col items-center justify-center absolute inset-0">
                     <Crown className="text-slate-300 w-6 h-6 mx-auto mb-1" />
-                    <span className="text-[10px] text-slate-400 block">public/assets/dubai-politics.jpg</span>
+                    <span className="text-[10px] text-slate-400 block">/assets/dubai-politics.jpg</span>
                  </div>
               </div>
            </div>
