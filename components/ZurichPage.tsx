@@ -46,8 +46,9 @@ export const ZurichPage: React.FC = () => {
             </p>
           </div>
           <div className="mt-auto h-64 bg-slate-50 rounded-xl overflow-hidden relative border border-slate-100">
+             {/* Image locale originale: /assets/zurich-aerial.jpg */}
              <ImageWithFallback 
-               src="/assets/zurich-aerial.jpg" 
+               src="https://images.unsplash.com/photo-1515488764276-beab7607c1e6?auto=format&fit=crop&q=80&w=800" 
                alt="Vue aérienne de Zurich" 
                className="absolute inset-0 w-full h-full object-cover"
              />
@@ -119,8 +120,9 @@ export const ZurichPage: React.FC = () => {
             </p>
           </div>
           <div className="mt-4 h-20 w-full bg-white/10 rounded-lg overflow-hidden relative border border-white/10">
+             {/* Image locale originale: /assets/zurich-lake.jpg */}
              <ImageWithFallback 
-               src="/assets/zurich-lake.jpg" 
+               src="https://images.unsplash.com/photo-1662491107563-12d8a5db0961?auto=format&fit=crop&q=80&w=800" 
                alt="Parc urbain ou bord du lac" 
                className="absolute inset-0 w-full h-full object-cover opacity-80"
              />
@@ -148,8 +150,9 @@ export const ZurichPage: React.FC = () => {
                  </p>
               </div>
               <div className="h-40 bg-slate-50 rounded-xl relative overflow-hidden border border-slate-100">
+                 {/* Image locale originale: /assets/zurich-politics.jpg */}
                  <ImageWithFallback 
-                   src="/assets/zurich-politics.jpg" 
+                   src="https://images.unsplash.com/photo-1573147895088-2c4998d3635e?auto=format&fit=crop&q=80&w=800" 
                    alt="Hôtel de ville de Zurich" 
                    className="absolute inset-0 w-full h-full object-cover"
                  />

@@ -46,8 +46,9 @@ export const DubaiPage: React.FC = () => {
             </p>
           </div>
           <div className="mt-auto h-64 bg-slate-50 rounded-xl overflow-hidden relative border border-slate-100">
+             {/* Image locale originale: /assets/dubai-map.jpg */}
              <ImageWithFallback 
-               src="/assets/dubai-map.jpg" 
+               src="https://images.unsplash.com/photo-1512418490979-92798cec1380?auto=format&fit=crop&q=80&w=800" 
                alt="Carte géopolitique du Moyen-Orient" 
                className="absolute inset-0 w-full h-full object-cover"
              />
@@ -121,6 +122,7 @@ export const DubaiPage: React.FC = () => {
             </ul>
           </div>
           <div className="mt-4 h-24 w-full bg-white/5 rounded-lg overflow-hidden relative border border-white/10">
+             {/* Image locale originale: /assets/dubai-logistics.jpg */}
              <ImageWithFallback 
                src="/assets/dubai-logistics.jpg" 
                alt="Vue aérienne du port Jebel Ali" 
@@ -150,8 +152,9 @@ export const DubaiPage: React.FC = () => {
                  </p>
               </div>
               <div className="h-40 bg-slate-50 rounded-xl relative overflow-hidden border border-slate-100">
+                 {/* Image locale originale: /assets/dubai-politics.jpg */}
                  <ImageWithFallback 
-                   src="/assets/dubai-politics.jpg" 
+                   src="https://images.unsplash.com/photo-1577083288073-40892c0860a4?auto=format&fit=crop&q=80&w=800" 
                    alt="Portrait de Cheikh Mohammed" 
                    className="absolute inset-0 w-full h-full object-cover"
                  />
