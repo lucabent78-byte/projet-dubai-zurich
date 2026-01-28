@@ -50,27 +50,29 @@ export const DubaiPage: React.FC = () => {
           </div>
           
           {/* IMAGE CONTAINER */}
-          <div className="mt-auto h-64 bg-slate-50 rounded-xl overflow-hidden relative group border-2 border-dashed border-slate-300 flex flex-col items-center justify-center p-4 text-center">
+          <div className="mt-auto h-64 bg-slate-50 rounded-xl overflow-hidden relative border-2 border-dashed border-slate-300">
+             {/* 
+                NOTE IMPORTANTE: 
+                L'image doit être dans 'public/assets/dubai-map.jpg'.
+                Le chemin src commence par un slash '/' pour indiquer la racine du dossier public.
+             */}
              <img 
                src="/assets/dubai-map.jpg" 
-               onError={(e) => {
-                 e.currentTarget.style.opacity = '0'; // Hide image but keep space
-                 e.currentTarget.parentElement?.classList.add('image-error'); // You could add specific styling logic here if needed, but the sibling div handles display
-               }}
-               onLoad={(e) => {
-                 e.currentTarget.style.opacity = '1';
-                 // Hide the fallback content when loaded
-                 const sibling = e.currentTarget.nextElementSibling as HTMLElement;
-                 if(sibling) sibling.style.display = 'none';
-               }}
                alt="Carte géopolitique du Moyen-Orient" 
-               className="absolute inset-0 w-full h-full object-cover z-10 transition-opacity duration-300"
+               className="absolute inset-0 w-full h-full object-cover z-20"
+               onError={(e) => e.currentTarget.style.display = 'none'} 
              />
-             {/* FALLBACK CONTENT (Visible if image fails or hasn't loaded) */}
-             <div className="z-0 flex flex-col items-center justify-center absolute inset-0 bg-slate-50">
-                <ImageIcon className="w-10 h-10 text-slate-300 mb-2" />
-                <span className="text-xs font-bold text-slate-400 bg-slate-200 px-2 py-1 rounded mb-1">IMAGE MANQUANTE</span>
-                <p className="text-[10px] text-slate-400 font-mono">/assets/dubai-map.jpg</p>
+             
+             {/* FALLBACK (Visible uniquement si l'image est masquée par onError) */}
+             <div className="absolute inset-0 flex flex-col items-center justify-center bg-slate-100 z-10 text-center p-4">
+                <ImageIcon className="w-10 h-10 text-slate-400 mb-2" />
+                <span className="text-xs font-bold text-slate-500 bg-white px-2 py-1 rounded border border-slate-200 shadow-sm mb-1">
+                  IMAGE NON TROUVÉE
+                </span>
+                <p className="text-[10px] text-slate-400 font-mono mt-1">
+                  Vérifiez que le fichier existe ici :<br/>
+                  <span className="text-blue-600 font-bold">/public/assets/dubai-map.jpg</span>
+                </p>
              </div>
           </div>
         </div>
@@ -143,23 +145,18 @@ export const DubaiPage: React.FC = () => {
           </div>
           
           {/* IMAGE CONTAINER */}
-          <div className="mt-4 h-24 w-full bg-white/5 rounded-lg overflow-hidden relative border border-white/10 flex items-center justify-center">
+          <div className="mt-4 h-24 w-full bg-white/5 rounded-lg overflow-hidden relative border border-white/10">
              <img 
                src="/assets/dubai-logistics.jpg" 
-               onError={(e) => {
-                 e.currentTarget.style.opacity = '0';
-               }}
-               onLoad={(e) => {
-                 e.currentTarget.style.opacity = '1';
-                 const sibling = e.currentTarget.nextElementSibling as HTMLElement;
-                 if(sibling) sibling.style.display = 'none';
-               }}
                alt="Vue aérienne du port Jebel Ali" 
-               className="absolute inset-0 w-full h-full object-cover z-10 transition-opacity duration-300"
+               className="absolute inset-0 w-full h-full object-cover z-20"
+               onError={(e) => e.currentTarget.style.display = 'none'} 
              />
-             <div className="text-center z-0 flex flex-col items-center justify-center absolute inset-0">
+             <div className="absolute inset-0 flex flex-col items-center justify-center bg-slate-800 z-10 p-2 text-center">
                 <ImageIcon className="w-6 h-6 text-slate-500 mb-1" />
-                <span className="text-[10px] text-slate-400">/assets/dubai-logistics.jpg</span>
+                <span className="text-[10px] text-slate-400">
+                  /public/assets/dubai-logistics.jpg
+                </span>
              </div>
           </div>
         </div>
@@ -186,23 +183,16 @@ export const DubaiPage: React.FC = () => {
               </div>
               
               {/* IMAGE CONTAINER: POLITIQUE */}
-              <div className="h-40 bg-slate-50 rounded-xl relative overflow-hidden border-2 border-dashed border-slate-300 flex items-center justify-center">
+              <div className="h-40 bg-slate-50 rounded-xl relative overflow-hidden border-2 border-dashed border-slate-300">
                  <img 
                    src="/assets/dubai-politics.jpg" 
-                   onError={(e) => {
-                     e.currentTarget.style.opacity = '0';
-                   }}
-                   onLoad={(e) => {
-                     e.currentTarget.style.opacity = '1';
-                     const sibling = e.currentTarget.nextElementSibling as HTMLElement;
-                     if(sibling) sibling.style.display = 'none';
-                   }}
                    alt="Portrait de Cheikh Mohammed" 
-                   className="absolute inset-0 w-full h-full object-cover z-10 transition-opacity duration-300"
+                   className="absolute inset-0 w-full h-full object-cover z-20"
+                   onError={(e) => e.currentTarget.style.display = 'none'} 
                  />
-                 <div className="text-center p-2 z-0 flex flex-col items-center justify-center absolute inset-0">
+                 <div className="absolute inset-0 flex flex-col items-center justify-center bg-slate-100 z-10 text-center p-2">
                     <Crown className="text-slate-300 w-6 h-6 mx-auto mb-1" />
-                    <span className="text-[10px] text-slate-400 block">/assets/dubai-politics.jpg</span>
+                    <span className="text-[10px] text-slate-400 block">/public/assets/dubai-politics.jpg</span>
                  </div>
               </div>
            </div>
