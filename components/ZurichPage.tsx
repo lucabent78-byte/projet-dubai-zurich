@@ -52,14 +52,17 @@ export const ZurichPage: React.FC = () => {
           
           {/* IMAGE CONTAINER */}
           <div className="mt-auto h-64 bg-slate-50 rounded-xl overflow-hidden relative group border-2 border-dashed border-slate-300 flex flex-col items-center justify-center p-4 text-center">
-             {/* COMMENTAIRE: Insérer ici l'image carte ou vue aérienne globale de Zurich */}
              <img 
-               src="" 
-               alt="Vue aérienne de Zurich montrant le lac et la densité urbaine contrainte par les collines" 
-               className="absolute inset-0 w-full h-full object-cover opacity-0 z-10"
+               src="/assets/zurich-aerial.jpg" 
+               onError={(e) => e.currentTarget.style.display = 'none'}
+               alt="Vue aérienne de Zurich montrant le lac" 
+               className="absolute inset-0 w-full h-full object-cover z-10"
              />
-             <ImageIcon className="w-8 h-8 text-slate-400 mb-2" />
-             <span className="text-xs font-mono bg-slate-200 text-slate-600 px-2 py-1 rounded mb-1">IMAGE PDF : Vue Aérienne / Carte</span>
+             <div className="z-0 flex flex-col items-center">
+                <ImageIcon className="w-8 h-8 text-slate-400 mb-2" />
+                <span className="text-xs font-mono bg-slate-200 text-slate-600 px-2 py-1 rounded mb-1">IMAGE MANQUANTE</span>
+                <p className="text-xs text-slate-400 italic">Ajoutez public/assets/zurich-aerial.jpg</p>
+             </div>
           </div>
         </div>
 
@@ -130,12 +133,13 @@ export const ZurichPage: React.FC = () => {
           {/* IMAGE CONTAINER */}
           <div className="mt-4 h-20 w-full bg-white/10 rounded-lg overflow-hidden relative border border-white/10 flex items-center justify-center">
              <img 
-               src="" 
-               alt="Parc urbain ou bord du lac avec des gens se baignant, illustrant la qualité de vie" 
-               className="absolute inset-0 w-full h-full object-cover opacity-0 z-10" 
+               src="/assets/zurich-lake.jpg" 
+               onError={(e) => e.currentTarget.style.display = 'none'}
+               alt="Parc urbain ou bord du lac" 
+               className="absolute inset-0 w-full h-full object-cover z-10" 
              />
-             <div className="text-[10px] text-emerald-200/70 text-center px-1">
-               IMAGE PDF<br/>Bord du Lac
+             <div className="text-[10px] text-emerald-200/70 text-center px-1 z-0">
+               zurich-lake.jpg
              </div>
           </div>
         </div>
@@ -163,15 +167,15 @@ export const ZurichPage: React.FC = () => {
               
               {/* IMAGE CONTAINER: POLITIQUE */}
               <div className="h-40 bg-slate-50 rounded-xl relative overflow-hidden border-2 border-dashed border-slate-300 flex items-center justify-center">
-                 {/* COMMENTAIRE: Insérer ici image Hôtel de Ville ou vote populaire */}
                  <img 
-                   src="" 
-                   alt="Hôtel de ville de Zurich (Rathaus) ou scène de votation populaire" 
-                   className="absolute inset-0 w-full h-full object-cover opacity-0 z-10" 
+                   src="/assets/zurich-politics.jpg" 
+                   onError={(e) => e.currentTarget.style.display = 'none'}
+                   alt="Hôtel de ville de Zurich (Rathaus)" 
+                   className="absolute inset-0 w-full h-full object-cover z-10" 
                  />
-                 <div className="text-center p-2">
+                 <div className="text-center p-2 z-0">
                     <Landmark className="text-slate-300 w-6 h-6 mx-auto mb-1" />
-                    <span className="text-[10px] text-slate-400 block">IMAGE PDF : Rathaus / Démocratie</span>
+                    <span className="text-[10px] text-slate-400 block">zurich-politics.jpg</span>
                  </div>
               </div>
            </div>

@@ -51,17 +51,18 @@ export const DubaiPage: React.FC = () => {
           
           {/* IMAGE CONTAINER */}
           <div className="mt-auto h-64 bg-slate-50 rounded-xl overflow-hidden relative group border-2 border-dashed border-slate-300 flex flex-col items-center justify-center p-4 text-center">
-             {/* COMMENTAIRE: Insérer ici l'image de la carte géopolitique du PDF (Page 1) */}
+             {/* Image updated to point to public folder */}
              <img 
-               src="" 
+               src="/assets/dubai-map.jpg" 
+               onError={(e) => e.currentTarget.style.display = 'none'}
                alt="Carte géopolitique du Moyen-Orient mettant en évidence la position stratégique de Dubaï sur la côte sud-est du Golfe Persique" 
-               className="absolute inset-0 w-full h-full object-cover opacity-0 z-10"
+               className="absolute inset-0 w-full h-full object-cover z-10"
              />
-             <ImageIcon className="w-8 h-8 text-slate-400 mb-2" />
-             <span className="text-xs font-mono bg-slate-200 text-slate-600 px-2 py-1 rounded mb-1">IMAGE PDF : Page 1</span>
-             <p className="text-xs text-slate-400 italic max-w-xs">
-               "Carte de localisation de Dubaï au Moyen-Orient"
-             </p>
+             <div className="z-0 flex flex-col items-center">
+                <ImageIcon className="w-8 h-8 text-slate-400 mb-2" />
+                <span className="text-xs font-mono bg-slate-200 text-slate-600 px-2 py-1 rounded mb-1">IMAGE MANQUANTE</span>
+                <p className="text-xs text-slate-400 italic">Ajoutez public/assets/dubai-map.jpg</p>
+             </div>
           </div>
         </div>
 
@@ -134,14 +135,14 @@ export const DubaiPage: React.FC = () => {
           
           {/* IMAGE CONTAINER */}
           <div className="mt-4 h-24 w-full bg-white/5 rounded-lg overflow-hidden relative border border-white/10 flex items-center justify-center">
-             {/* COMMENTAIRE: Insérer ici l'image du Port Jebel Ali ou Aéroport DXB du PDF */}
              <img 
-               src="" 
-               alt="Vue aérienne du port Jebel Ali montrant l'immensité des terminaux conteneurs artificiels gagnés sur la mer" 
-               className="absolute inset-0 w-full h-full object-cover opacity-0 z-10" 
+               src="/assets/dubai-logistics.jpg" 
+               onError={(e) => e.currentTarget.style.display = 'none'}
+               alt="Vue aérienne du port Jebel Ali" 
+               className="absolute inset-0 w-full h-full object-cover z-10" 
              />
-             <div className="text-[10px] text-slate-400 text-center px-1">
-               IMAGE PDF<br/>Port Jebel Ali
+             <div className="text-[10px] text-slate-400 text-center px-1 z-0">
+               IMAGE MANQUANTE<br/>dubai-logistics.jpg
              </div>
           </div>
         </div>
@@ -169,15 +170,15 @@ export const DubaiPage: React.FC = () => {
               
               {/* IMAGE CONTAINER: POLITIQUE */}
               <div className="h-40 bg-slate-50 rounded-xl relative overflow-hidden border-2 border-dashed border-slate-300 flex items-center justify-center">
-                 {/* COMMENTAIRE: Insérer ici portrait Cheikh Mohammed ou Palais Zabeel */}
                  <img 
-                   src="" 
-                   alt="Portrait de Cheikh Mohammed bin Rashid Al Maktoum ou vue de son palais, illustrant le pouvoir politique" 
-                   className="absolute inset-0 w-full h-full object-cover opacity-0 z-10" 
+                   src="/assets/dubai-politics.jpg" 
+                   onError={(e) => e.currentTarget.style.display = 'none'}
+                   alt="Portrait de Cheikh Mohammed bin Rashid Al Maktoum" 
+                   className="absolute inset-0 w-full h-full object-cover z-10" 
                  />
-                 <div className="text-center p-2">
+                 <div className="text-center p-2 z-0">
                     <Crown className="text-slate-300 w-6 h-6 mx-auto mb-1" />
-                    <span className="text-[10px] text-slate-400 block">IMAGE PDF : Cheikh Mohammed / Palais</span>
+                    <span className="text-[10px] text-slate-400 block">dubai-politics.jpg</span>
                  </div>
               </div>
            </div>
