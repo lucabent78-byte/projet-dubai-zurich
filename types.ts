@@ -1,7 +1,7 @@
 export enum Tab {
   DUBAI = 'DUBAI',
   ZURICH = 'ZURICH',
-  ANALYSIS = 'ANALYSIS'
+  COMPARISON = 'COMPARISON'
 }
 
 export interface ChartData {

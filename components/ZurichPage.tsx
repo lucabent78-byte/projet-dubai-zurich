@@ -3,10 +3,23 @@ import {
   Landmark, 
   Leaf, 
   Wallet,
-  Clock,
   Map,
+  Vote,
+  TrendingUp,
   Image as ImageIcon
 } from 'lucide-react';
+import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid } from 'recharts';
+
+// Données démographiques approximatives pour Zurich (Ville) montrant la stabilité
+const zurichPopulationData = [
+  { year: '1970', population: 422000 },
+  { year: '1980', population: 369000 },
+  { year: '1990', population: 365000 },
+  { year: '2000', population: 363000 },
+  { year: '2010', population: 385000 },
+  { year: '2015', population: 410000 },
+  { year: '2022', population: 427000 },
+];
 
 export const ZurichPage: React.FC = () => {
   return (
@@ -15,128 +28,154 @@ export const ZurichPage: React.FC = () => {
       <header className="space-y-2">
         <h1 className="text-4xl font-bold text-slate-900">Zurich, Suisse</h1>
         <p className="text-lg text-slate-600 max-w-2xl">
-          L'incarnation de la stabilité historique et de la qualité de vie. Une métropole financière à taille humaine.
+          L'incarnation de la stabilité historique. Une métropole gérée par le consensus démocratique.
         </p>
       </header>
 
       {/* Bento Grid */}
       <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 auto-rows-[minmax(180px,auto)]">
 
-        {/* 1. Histoire & Politique */}
-        <div className="col-span-1 md:col-span-2 row-span-1 bg-white p-6 rounded-3xl shadow-sm border border-slate-100">
-          <div className="flex items-center gap-2 text-red-600 mb-3">
-            <Landmark className="w-6 h-6" />
-            <h2 className="text-xl font-semibold">Régime & Histoire</h2>
+        {/* 1. Localisation & Situation (Large Card - Matching Dubai) */}
+        <div className="col-span-1 md:col-span-2 row-span-2 bg-white p-6 rounded-3xl shadow-sm border border-slate-100 flex flex-col gap-4">
+          <div className="flex items-center gap-2 text-blue-600 mb-2">
+            <Map className="w-6 h-6" />
+            <h2 className="text-xl font-semibold">Localisation & Situation</h2>
           </div>
-          <div className="flex flex-col md:flex-row gap-6">
-            <div className="flex-1 prose text-slate-600 text-sm">
-              <p className="mb-2">
-                Contrairement à la monarchie absolue des EAU, Zurich s'inscrit dans un <strong>système fédéral démocratique</strong>. 
-              </p>
-              <p>
-                Ville romaine (Turicum), développée organiquement. Sa richesse repose sur des siècles de commerce et d'industrie de précision.
-              </p>
-            </div>
-             {/* IMAGE CONTAINER */}
-             <div className="w-full md:w-1/3 h-32 md:h-auto bg-slate-50 rounded-xl overflow-hidden relative border-2 border-dashed border-slate-300 flex items-center justify-center p-2 text-center">
-               {/* COMMENTAIRE: Insérer ici image Vieille Ville / Altstadt du PDF */}
-               <img 
-                 src="" 
-                 alt="Vue pittoresque de la vieille ville de Zurich (Altstadt) montrant les toits historiques et les clochers des églises (Grossmünster)" 
-                 className="absolute inset-0 w-full h-full object-cover opacity-0 z-10" 
-               />
-               <div>
-                  <ImageIcon className="w-6 h-6 text-slate-300 mx-auto mb-1" />
-                  <span className="text-[10px] text-slate-500">IMAGE PDF : Vieille Ville</span>
-               </div>
+          <div className="prose text-slate-600 mb-2">
+            <p className="mb-2">
+              <strong className="text-slate-900">Situation :</strong> Située au cœur de l'Europe, au nord de la Suisse. Ville lacustre à l'extrémité nord du lac de Zurich, traversée par la Limmat.
+            </p>
+            <p>
+              <strong className="text-slate-900">Cadre :</strong> Un environnement contraint par la topographie (collines, lac) qui limite naturellement l'étalement urbain, contrairement au désert ouvert de Dubaï.
+            </p>
+          </div>
+          
+          {/* IMAGE CONTAINER */}
+          <div className="mt-auto h-64 bg-slate-50 rounded-xl overflow-hidden relative group border-2 border-dashed border-slate-300 flex flex-col items-center justify-center p-4 text-center">
+             {/* COMMENTAIRE: Insérer ici l'image carte ou vue aérienne globale de Zurich */}
+             <img 
+               src="" 
+               alt="Vue aérienne de Zurich montrant le lac et la densité urbaine contrainte par les collines" 
+               className="absolute inset-0 w-full h-full object-cover opacity-0 z-10"
+             />
+             <ImageIcon className="w-8 h-8 text-slate-400 mb-2" />
+             <span className="text-xs font-mono bg-slate-200 text-slate-600 px-2 py-1 rounded mb-1">IMAGE PDF : Vue Aérienne / Carte</span>
+          </div>
+        </div>
+
+        {/* 2. Démographie (Chart Card - Replacing History) */}
+        <div className="col-span-1 md:col-span-2 row-span-2 bg-white p-6 rounded-3xl shadow-sm border border-slate-100 flex flex-col">
+          <div className="flex items-center gap-2 text-purple-600 mb-4">
+            <TrendingUp className="w-6 h-6" />
+            <h2 className="text-xl font-semibold">Stabilité Démographique</h2>
+          </div>
+          <p className="text-slate-500 text-sm mb-4">
+            Population 2022 : ~427k. Une croissance lente et maîtrisée, contrastant avec l'explosion de Dubaï.
+          </p>
+          <div className="flex-1 min-h-[250px] w-full">
+            <ResponsiveContainer width="100%" height="100%">
+              <BarChart data={zurichPopulationData}>
+                <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e2e8f0" />
+                <XAxis 
+                  dataKey="year" 
+                  tick={{fontSize: 12, fill: '#64748b'}} 
+                  axisLine={false}
+                  tickLine={false}
+                />
+                <YAxis 
+                  domain={[300000, 450000]}
+                  tick={{fontSize: 12, fill: '#64748b'}} 
+                  axisLine={false}
+                  tickLine={false}
+                  tickFormatter={(value) => `${(value / 1000).toFixed(0)}k`}
+                />
+                <Tooltip 
+                  cursor={{fill: '#f1f5f9'}}
+                  contentStyle={{borderRadius: '12px', border: 'none', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)'}}
+                />
+                <Bar 
+                  dataKey="population" 
+                  fill="#7c3aed" 
+                  radius={[4, 4, 0, 0]}
+                  animationDuration={1500}
+                />
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
+        </div>
+
+        {/* 3. Économie (Small Card - Matching Dubai) */}
+        <div className="col-span-1 md:col-span-1 bg-white p-6 rounded-3xl shadow-sm border border-slate-100">
+          <div className="flex items-center gap-2 text-emerald-600 mb-3">
+            <Wallet className="w-6 h-6" />
+            <h2 className="text-lg font-semibold">Économie</h2>
+          </div>
+          <div className="text-xl font-bold text-slate-800 mb-1">Haute Valeur</div>
+          <div className="text-sm font-medium text-slate-500 mb-4">Finance & Services</div>
+          <p className="text-sm text-slate-600 leading-relaxed">
+            Siège de l'UBS et du CS. Pôle mondial de la banque privée et de l'assurance.
+          </p>
+        </div>
+
+        {/* 4. Qualité de Vie (Small Card - Matching Dubai Logistics) */}
+        <div className="col-span-1 md:col-span-1 bg-gradient-to-br from-emerald-900 to-emerald-800 text-white p-6 rounded-3xl shadow-lg flex flex-col justify-between">
+          <div>
+            <h2 className="text-lg font-semibold mb-4 flex items-center gap-2">
+              <Leaf className="w-5 h-5" /> Cadre de Vie
+            </h2>
+            <p className="text-sm text-emerald-100">
+               Régulièrement élue ville offrant la meilleure qualité de vie au monde. Mobilité douce, propreté et sécurité.
+            </p>
+          </div>
+          {/* IMAGE CONTAINER */}
+          <div className="mt-4 h-20 w-full bg-white/10 rounded-lg overflow-hidden relative border border-white/10 flex items-center justify-center">
+             <img 
+               src="" 
+               alt="Parc urbain ou bord du lac avec des gens se baignant, illustrant la qualité de vie" 
+               className="absolute inset-0 w-full h-full object-cover opacity-0 z-10" 
+             />
+             <div className="text-[10px] text-emerald-200/70 text-center px-1">
+               IMAGE PDF<br/>Bord du Lac
              </div>
           </div>
         </div>
 
-        {/* 2. Key Metric: Stability */}
-        <div className="col-span-1 bg-emerald-50 p-6 rounded-3xl border border-emerald-100 flex flex-col justify-center items-center text-center">
-            <Clock className="w-10 h-10 text-emerald-600 mb-2" />
-            <div className="text-3xl font-bold text-emerald-900">Lenteur</div>
-            <div className="text-sm text-emerald-700 mt-1">Planifiée & Consultative</div>
-            <p className="text-xs text-emerald-600 mt-4 px-2">
-              Le développement urbain est soumis à des référendums.
-            </p>
-        </div>
-
-        {/* 3. Localisation & Cadre */}
-        <div className="col-span-1 md:col-span-1 row-span-2 bg-white p-6 rounded-3xl shadow-sm border border-slate-100 flex flex-col">
-            <div className="flex items-center gap-2 text-blue-600 mb-4">
-              <Map className="w-6 h-6" />
-              <h2 className="text-lg font-semibold">Géographie</h2>
-            </div>
-            <p className="text-slate-600 text-sm mb-4">
-              Située au nord de la Suisse, à l'extrémité nord du lac de Zurich. Cadre alpin limitant l'étalement.
-            </p>
-            
-            {/* IMAGE CONTAINER */}
-            <div className="mt-auto h-40 bg-slate-50 rounded-xl overflow-hidden relative border-2 border-dashed border-slate-300 flex items-center justify-center p-2 text-center">
-              {/* COMMENTAIRE: Insérer ici image Lac de Zurich / Vue Aérienne du PDF */}
-              <img 
-                src="" 
-                alt="Vue panoramique du Lac de Zurich avec la ville au premier plan et les Alpes en arrière-plan" 
-                className="absolute inset-0 w-full h-full object-cover opacity-0 z-10" 
-              />
-               <div>
-                  <ImageIcon className="w-6 h-6 text-slate-300 mx-auto mb-1" />
-                  <span className="text-[10px] text-slate-500">IMAGE PDF : Lac de Zurich</span>
-               </div>
-            </div>
-        </div>
-
-        {/* 4. Économie & Global City */}
+        {/* 5. Régime Politique (Large - Matching Dubai Regime slot) */}
         <div className="col-span-1 md:col-span-2 bg-white p-6 rounded-3xl shadow-sm border border-slate-100">
            <div className="flex items-center justify-between mb-4">
-             <div className="flex items-center gap-2 text-slate-800">
-               <Wallet className="w-6 h-6" />
-               <h2 className="text-lg font-semibold">Hub Financier</h2>
-             </div>
+              <div className="flex items-center gap-2 text-orange-600">
+                <Vote className="w-6 h-6" />
+                <h2 className="text-lg font-semibold">Régime Politique</h2>
+              </div>
            </div>
-           <div className="grid grid-cols-2 gap-4">
-             <div className="text-sm text-slate-600">
-               <p className="mb-2">Zurich est l'une des places financières les plus importantes au monde (~430k habitants).</p>
-               <p>Économie de services à haute valeur ajoutée et recherche (ETH Zurich).</p>
-             </div>
-             
-             {/* IMAGE CONTAINER: ZURICH WEST / MODERN ECONOMY */}
-             <div className="bg-slate-50 rounded-xl border-2 border-dashed border-slate-300 relative flex items-center justify-center p-2">
-                 {/* COMMENTAIRE: Insérer ici image Zurich West / Prime Tower du PDF */}
+           
+           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="space-y-4 text-sm text-slate-600">
+                 <p>
+                    <strong className="text-slate-900 block mb-1">Démocratie Directe :</strong> 
+                    Zurich fonctionne selon un système fédéral (Suisse). Le pouvoir est horizontal ("Bottom-Up"). Les citoyens votent sur les projets d'urbanisme majeurs.
+                 </p>
+                 <p>
+                    <strong className="text-slate-900 block mb-1">Consensus :</strong> 
+                    Ce processus garantit la stabilité et l'acceptation sociale, mais ralentit considérablement la vitesse de transformation urbaine par rapport à Dubaï.
+                 </p>
+              </div>
+              
+              {/* IMAGE CONTAINER: POLITIQUE */}
+              <div className="h-40 bg-slate-50 rounded-xl relative overflow-hidden border-2 border-dashed border-slate-300 flex items-center justify-center">
+                 {/* COMMENTAIRE: Insérer ici image Hôtel de Ville ou vote populaire */}
                  <img 
                    src="" 
-                   alt="Vue moderne du quartier Zurich West avec la Prime Tower, illustrant la reconversion industrielle" 
+                   alt="Hôtel de ville de Zurich (Rathaus) ou scène de votation populaire" 
                    className="absolute inset-0 w-full h-full object-cover opacity-0 z-10" 
                  />
-                 <div className="text-center">
-                    <span className="text-[10px] text-slate-400">IMAGE PDF : Zurich West / Finance</span>
+                 <div className="text-center p-2">
+                    <Landmark className="text-slate-300 w-6 h-6 mx-auto mb-1" />
+                    <span className="text-[10px] text-slate-400 block">IMAGE PDF : Rathaus / Démocratie</span>
                  </div>
-             </div>
+              </div>
            </div>
         </div>
-
-         {/* 5. Urbanisme Durable */}
-         <div className="col-span-1 bg-white p-6 rounded-3xl shadow-sm border border-slate-100">
-            <div className="flex items-center gap-2 text-green-600 mb-2">
-              <Leaf className="w-5 h-5" />
-              <h2 className="text-md font-semibold">Mobilité Douce</h2>
-            </div>
-            <p className="text-sm text-slate-600 mb-2">
-              Priorité aux transports publics (Tramway) et à la préservation du patrimoine.
-            </p>
-             {/* IMAGE CONTAINER: TRAMWAY */}
-             <div className="h-20 bg-slate-50 rounded-lg border-2 border-dashed border-slate-300 relative flex items-center justify-center">
-                 {/* COMMENTAIRE: Insérer ici image Tramway du PDF */}
-                 <img 
-                   src="" 
-                   alt="Tramway bleu de Zurich circulant dans une rue urbaine dense" 
-                   className="absolute inset-0 w-full h-full object-cover opacity-0 z-10" 
-                 />
-                 <span className="text-[10px] text-slate-400">IMAGE PDF : Tramway</span>
-             </div>
-         </div>
 
       </div>
     </div>

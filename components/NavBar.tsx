@@ -31,9 +31,9 @@ export const NavBar: React.FC<NavBarProps> = ({ currentTab, onTabChange }) => {
             <Landmark size={18} />
             Zurich
           </button>
-          <button onClick={() => onTabChange(Tab.ANALYSIS)} className={getButtonClass(Tab.ANALYSIS)}>
+          <button onClick={() => onTabChange(Tab.COMPARISON)} className={getButtonClass(Tab.COMPARISON)}>
             <Scale size={18} />
-            Analyse
+            Comparaison
           </button>
         </div>
       </div>

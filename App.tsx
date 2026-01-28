@@ -14,7 +14,7 @@ const App: React.FC = () => {
         return <DubaiPage />;
       case Tab.ZURICH:
         return <ZurichPage />;
-      case Tab.ANALYSIS:
+      case Tab.COMPARISON:
         return <AnalysisPage />;
       default:
         return <DubaiPage />;

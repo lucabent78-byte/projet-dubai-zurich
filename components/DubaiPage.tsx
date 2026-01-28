@@ -3,10 +3,9 @@ import {
   MapPin, 
   TrendingUp, 
   Plane, 
-  TrainFront, 
   Anchor, 
   DollarSign, 
-  Building,
+  Crown,
   Image as ImageIcon
 } from 'lucide-react';
 import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid } from 'recharts';
@@ -147,51 +146,38 @@ export const DubaiPage: React.FC = () => {
           </div>
         </div>
 
-        {/* 5. Urbanisme (CBD & Métro) */}
+        {/* 5. Régime Politique (Modifié) */}
         <div className="col-span-1 md:col-span-2 bg-white p-6 rounded-3xl shadow-sm border border-slate-100">
            <div className="flex items-center justify-between mb-4">
               <div className="flex items-center gap-2 text-orange-600">
-                <Building className="w-6 h-6" />
-                <h2 className="text-lg font-semibold">Paysage Urbain</h2>
+                <Crown className="w-6 h-6" />
+                <h2 className="text-lg font-semibold">Régime Politique</h2>
               </div>
            </div>
            
-           <div className="grid grid-cols-2 gap-4">
-              <div className="space-y-2">
-                 <p className="text-sm text-slate-600">
-                    <strong className="text-slate-900">Transports :</strong> Le métro aérien structure la ville linéaire.
+           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="space-y-4 text-sm text-slate-600">
+                 <p>
+                    <strong className="text-slate-900 block mb-1">Monarchie Absolue Fédérale :</strong> 
+                    Dubaï est dirigé par la famille Al Maktoum. Le pouvoir est centralisé et vertical ("Top-Down"). Les décisions d'urbanisme sont prises rapidement par l'Émir.
                  </p>
-                 {/* IMAGE CONTAINER: METRO */}
-                 <div className="h-32 bg-slate-50 rounded-xl relative overflow-hidden border-2 border-dashed border-slate-300 flex items-center justify-center">
-                    {/* COMMENTAIRE: Insérer ici le plan du métro du PDF */}
-                    <img 
-                      src="" 
-                      alt="Schéma ou carte du réseau de métro de Dubaï (Lignes Rouge et Verte) longeant l'axe Sheikh Zayed Road" 
-                      className="absolute inset-0 w-full h-full object-cover opacity-0 z-10" 
-                    />
-                    <div className="text-center">
-                       <TrainFront className="text-slate-300 w-6 h-6 mx-auto mb-1" />
-                       <span className="text-[10px] text-slate-400 block">IMAGE PDF : Plan Métro</span>
-                    </div>
-                 </div>
+                 <p>
+                    <strong className="text-slate-900 block mb-1">Vision 2040 :</strong> 
+                    Une planification stratégique imposée pour maintenir la compétitivité mondiale, sans opposition politique majeure freinant les grands projets.
+                 </p>
               </div>
               
-              <div className="space-y-2">
-                 <p className="text-sm text-slate-600">
-                    <strong className="text-slate-900">Business Bay :</strong> Concentration de gratte-ciels.
-                 </p>
-                 {/* IMAGE CONTAINER: BUSINESS BAY */}
-                 <div className="h-32 bg-slate-50 rounded-xl relative overflow-hidden border-2 border-dashed border-slate-300 flex items-center justify-center">
-                    {/* COMMENTAIRE: Insérer ici une vue de Business Bay du PDF */}
-                    <img 
-                      src="" 
-                      alt="Vue panoramique de Business Bay montrant la densité des tours de bureaux modernes le long du canal" 
-                      className="absolute inset-0 w-full h-full object-cover opacity-0 z-10" 
-                    />
-                     <div className="text-center">
-                       <Building className="text-slate-300 w-6 h-6 mx-auto mb-1" />
-                       <span className="text-[10px] text-slate-400 block">IMAGE PDF : Business Bay</span>
-                    </div>
+              {/* IMAGE CONTAINER: POLITIQUE */}
+              <div className="h-40 bg-slate-50 rounded-xl relative overflow-hidden border-2 border-dashed border-slate-300 flex items-center justify-center">
+                 {/* COMMENTAIRE: Insérer ici portrait Cheikh Mohammed ou Palais Zabeel */}
+                 <img 
+                   src="" 
+                   alt="Portrait de Cheikh Mohammed bin Rashid Al Maktoum ou vue de son palais, illustrant le pouvoir politique" 
+                   className="absolute inset-0 w-full h-full object-cover opacity-0 z-10" 
+                 />
+                 <div className="text-center p-2">
+                    <Crown className="text-slate-300 w-6 h-6 mx-auto mb-1" />
+                    <span className="text-[10px] text-slate-400 block">IMAGE PDF : Cheikh Mohammed / Palais</span>
                  </div>
               </div>
            </div>
