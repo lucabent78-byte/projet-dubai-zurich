@@ -1,5 +1,5 @@
 import React from 'react';
-import { Scale, ArrowUpFromLine, Hammer, Users, Image as ImageIcon, CheckCircle2, AlertTriangle } from 'lucide-react';
+import { ArrowUpFromLine, Hammer, Users, Image as ImageIcon, CheckCircle2, AlertTriangle } from 'lucide-react';
 
 export const AnalysisPage: React.FC = () => {
   return (
